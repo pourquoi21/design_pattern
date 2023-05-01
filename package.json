@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "passport": "^0.6.0",
+    "password": "^0.1.1"
+  }
+}
