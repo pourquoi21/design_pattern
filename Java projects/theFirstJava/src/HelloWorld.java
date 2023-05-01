@@ -12,10 +12,27 @@ public class HelloWorld {
     // }
 
     // Factory
+    // public static void main(String[] args){
+    //     Factory latte = CoffeeFactory.getCoffee("Latte", 4000);
+    //     Factory ame = CoffeeFactory.getCoffee("Americano", 3000);
+    //     System.out.println("Factory Latte :: " + latte);
+    //     System.out.println("Factory Ame :: " + ame);
+    // }
+
+    // Strategy (Payment system)
     public static void main(String[] args){
-        Factory latte = CoffeeFactory.getCoffee("Latte", 4000);
-        Factory ame = CoffeeFactory.getCoffee("Americano", 3000);
-        System.out.println("Factory Latte :: " + latte);
-        System.out.println("Factory Ame :: " + ame);
+        ShoppingCart cart = new ShoppingCart();
+
+        Item A = new Item("Jay1", 100);
+        Item B = new Item("Jay2", 300);
+
+        cart.addItem(A);
+        cart.addItem(B);
+
+        // pay by NHCard
+        cart.pay(new NHCardStrategy("Jay@example.com", "jayjay"));
+
+        // pay by KAKAOCard
+        cart.pay(new KAKAOCardStrategy("Jay", "123456789", "123", "2502"));
     }
 }
