@@ -11,13 +11,13 @@ public class HelloWorld {
     //     }
     // }
 
-    // Factory
-    public static void main(String[] args){
-        Factory latte = CoffeeFactory.getCoffee("Latte", 4000);
-        Factory ame = CoffeeFactory.getCoffee("Americano", 3000);
-        System.out.println(latte);
-        System.out.println(ame);
-    };
+    // // Factory
+    // public static void main(String[] args){
+    //     Factory latte = CoffeeFactory.getCoffee("Latte", 4000);
+    //     Factory ame = CoffeeFactory.getCoffee("Americano", 3000);
+    //     System.out.println(latte);
+    //     System.out.println(ame);
+    // };
 
     // Strategy (Payment system)
 //     public static void main(String[] args){
@@ -35,4 +35,19 @@ public class HelloWorld {
 //         // pay by KAKAOCard
 //         cart.pay(new KAKAOCardStrategy("Jay", "123456789", "123", "2502"));
 //     }
+
+    // Observer
+    public static void main(String[] args){
+        Topic topic = new Topic();
+
+        Observer a = new TopicSubscriber("a", topic);
+        Observer b = new TopicSubscriber("b", topic);
+        Observer c = new TopicSubscriber("c", topic);
+
+        topic.register(a);
+        topic.register(b);
+        topic.register(c);
+
+        topic.postMessage("Jay is the best!");
+    }
 }
