@@ -5,9 +5,15 @@ public class Hello {
     그 이후에 java Hello 를 하면 JVM이 Hello.class를 실행한다.
     Hello 파일 내부의 코드 실행 */
     public static void main(String[] args){
+        int a = 5;
+        float f = 6.235f;
+        char ch = 'A';
         System.out.println("Hello!");
-        for (int i = 2; i<11; i++){
-            System.out.printf("5 * %d = %d", i, 5*i).println();
+        for (int i = 2; i < 11; i++){
+            System.out.printf("%d * %d = %d", a, i, 5*i).println();
         }
+        System.out.printf("%d + %d + %d = %d", 5, 6, 7, 5 + 6 + 7 ).println();
+        System.out.printf("%4.2f", f).println();
+        System.out.println((int) ch);
     }
 }
