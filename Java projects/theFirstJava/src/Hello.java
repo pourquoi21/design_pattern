@@ -16,4 +16,16 @@ public class Hello {
         System.out.printf("%4.2f", f).println();
         System.out.println((int) ch);
     }
+
+    void sayHelloWorld(int noOfTimes){
+        for (int i = 1; i <= noOfTimes; i++){
+            System.out.println("Hello World");
+        }
+    }
+
+    void printMultiplicationTable(int n){
+        for (int i = 1; i <= 10; i++){
+            System.out.printf("%d * %d = %d", n, i, n * i).println();
+        }
+    }
 }
