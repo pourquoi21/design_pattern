@@ -28,4 +28,14 @@ public class Hello {
             System.out.printf("%d * %d = %d", n, i, n * i).println();
         }
     }
+
+    int sumOfNumbers(int firstNumber, int secondNumber){
+        int sum = firstNumber + secondNumber;
+        return sum;
+    }
+
+    int sumOfNumbers(int firstNumber, int secondNumber, int thirdNumber){
+        int sum = firstNumber + secondNumber + thirdNumber;
+        return sum;
+    }
 }
