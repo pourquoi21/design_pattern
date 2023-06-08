@@ -1,7 +1,18 @@
 public class MyProfile {
     public static void main(String[] args){
-        System.out.print("Jay");
-        System.out.print("jay@jayjay.com");
-        System.out.print("female")
+        System.out.println("Jay");
+        System.out.println("jay@jayjay.com");
+        System.out.println("female");
+        System.out.println("");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.println("**********");
+        System.out.print("**********");
     }
 }
