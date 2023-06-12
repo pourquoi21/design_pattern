@@ -2,16 +2,17 @@ package com.in28minutes.firstjavaproject;
 
 public class MultiplicationTable {
 	void print() {
-		for(int i = 1; i <= 10; i++) {
-			System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
-		}
+//		for(int i = 1; i <= 10; i++) {
+//			System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+//		}
+		print(5);
 	}
 	
 	void print(int table) {
 //		for(int i = 1; i <= 10; i++) {
 //			System.out.printf("%d * %d = %d", table, i, table * i).println();
 //		}
-		print(6, 1, 10);
+		print(table, 1, 10);
 	}
 	
 	void print(int table, int from, int to) {
