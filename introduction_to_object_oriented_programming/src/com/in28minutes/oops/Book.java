@@ -8,4 +8,12 @@ public class Book {
 		System.out.println(noOfCopies);
 		System.out.println(this.noOfCopies);
 	}
+
+	public void increaseCopies(int howMuch) {
+		this.noOfCopies = this.noOfCopies + howMuch;
+	}
+
+	public void decreaseCopies(int howMuch) {
+		this.noOfCopies = this.noOfCopies - howMuch;
+	}
 }
