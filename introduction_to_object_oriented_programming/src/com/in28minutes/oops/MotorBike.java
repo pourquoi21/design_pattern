@@ -3,6 +3,11 @@ package com.in28minutes.oops;
 public class MotorBike {
 	private int speed; // member variable
 
+	MotorBike() { // default constructor
+		// this.speed = 5;
+		this(5);
+	}
+
 	MotorBike(int speed) {
 		this.speed = speed;
 	}
