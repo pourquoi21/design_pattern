@@ -4,8 +4,8 @@ public class MotorBikeRunner {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		MotorBike ducati = new MotorBike();
-		MotorBike honda = new MotorBike();
+		MotorBike ducati = new MotorBike(100);
+		MotorBike honda = new MotorBike(200);
 
 		ducati.start();
 		honda.start();
