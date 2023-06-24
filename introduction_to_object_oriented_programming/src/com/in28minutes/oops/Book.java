@@ -3,6 +3,10 @@ package com.in28minutes.oops;
 public class Book {
 	private int noOfCopies;
 
+	Book() {
+		this(5);
+	}
+
 	Book(int noOfCopies) {
 		this.noOfCopies = noOfCopies;
 	}
