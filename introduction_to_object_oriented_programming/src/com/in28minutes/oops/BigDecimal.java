@@ -6,7 +6,8 @@ public class BigDecimal {
 	}
 
 	public static void main(String[] args) {
-		BigDecimal number1 = new BigDecimal("34.56789");
+		BigDecimal number = new BigDecimal("11.5");
+		BigDecimal number2 = new BigDecimal("23.45678");
 
 	}
 
