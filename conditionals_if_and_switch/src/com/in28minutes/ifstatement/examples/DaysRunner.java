@@ -8,6 +8,7 @@ public class DaysRunner {
         System.out.println(determineNameOfDay(6));
 
         System.out.println(isWeekDay(3));
+        System.out.println(isWeekDay(0));
     }
 
     public static String determineNameOfDay(int dayNumber) {
@@ -43,21 +44,15 @@ public class DaysRunner {
 
     public static boolean isWeekDay(int dayNumber) {
         switch (dayNumber) {
-        case 0:
-            return false;
+        // case 0:
+        // case 6:
+        // return false;
         case 1:
-            return true;
         case 2:
-            return true;
         case 3:
-            return true;
         case 4:
-            return true;
         case 5:
             return true;
-
-        case 6:
-            return false;
 
         default:
             return false;
