@@ -9,12 +9,20 @@ public class MyNumber {
 
     public boolean isPrime() {
 
-        for (int i = 0; i <= number; i++) {
+        for (int i = 1; i <= number; i++) {
+            if (number % i > 0) {
+                continue;
+            }
 
+            if (number % i == 0) {
+                if (i == 1)
+                    continue;
+                if (i == number)
+                    return true;
+                return false;
+            }
         }
-
         return false;
-
     }
 
 }
