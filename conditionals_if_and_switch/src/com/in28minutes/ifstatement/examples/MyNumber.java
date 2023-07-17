@@ -65,11 +65,17 @@ public class MyNumber {
     }
 
     public void printANumberTriangle() {
-        String stringLine = "";
+//        String stringLine = "";
+//        for (int i = 1; i <= number; i++) {
+//            stringLine += i;
+//            stringLine += " ";
+//            System.out.println(stringLine);
+//        }
         for (int i = 1; i <= number; i++) {
-            stringLine += i;
-            stringLine += " ";
-            System.out.println(stringLine);
+            for (int j = 1; j <= i; j++) {
+                System.out.print(j + " ");
+            }
+            System.out.println("");
         }
     }
 
