@@ -71,12 +71,20 @@ public class MyNumber {
 //            stringLine += " ";
 //            System.out.println(stringLine);
 //        }
+//        for (int i = 1; i <= number; i++) {
+//            for (int j = 1; j <= i; j++) {
+//                System.out.print(j + " ");
+//            }
+//            System.out.println("");
+//        }
+        StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= number; i++) {
             for (int j = 1; j <= i; j++) {
-                System.out.print(j + " ");
+                sb.append(j).append(" ");
             }
-            System.out.println("");
+            sb.append("\n");
         }
+        System.out.println(sb);
     }
 
 }
