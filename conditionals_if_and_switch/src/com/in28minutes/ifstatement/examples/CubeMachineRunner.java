@@ -18,6 +18,13 @@ public class CubeMachineRunner {
 
         } while (number > 0);
         System.out.println("Thank You! Have Fun!");
+
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 != 0)
+                continue;
+            System.out.print(i + " ");
+        }
+
     }
 
 }
