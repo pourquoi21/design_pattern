@@ -6,4 +6,9 @@ public class Animal {
     Animal(int id) {
         this.id = id;
     }
+
+    public void cry() {
+        System.out.println(id + "animal cried");
+
+    }
 }
