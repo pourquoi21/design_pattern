@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Jara
+ *
+ */
+module fastcampus {
+}
