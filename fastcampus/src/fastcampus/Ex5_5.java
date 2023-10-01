@@ -24,8 +24,8 @@ public class Ex5_5 {
 
         for (int i = 0; i < 6; i++) {
             int j = (int) (Math.random() * 45);
-            ball[i] = ball[j];
             tmp = ball[i];
+            ball[i] = ball[j];
             ball[j] = tmp;
         }
         System.out.println(Arrays.toString(ball));

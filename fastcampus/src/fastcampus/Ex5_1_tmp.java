@@ -18,6 +18,18 @@ public class Ex5_1_tmp {
         System.out.println();
 
         System.out.println(Arrays.toString(arr2));
+
+        String[] strArr = { "가위", "바위", "보" };
+
+        int i = (int) (Math.random() * 3);
+
+        System.out.println(strArr[i]);
+
+        String str = "ABCDE";
+
+        System.out.println(str.charAt(2));
+        System.out.println(str.substring(2, 4));
+
     }
 
 }
