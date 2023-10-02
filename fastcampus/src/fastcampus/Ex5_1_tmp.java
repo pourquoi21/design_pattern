@@ -30,6 +30,12 @@ public class Ex5_1_tmp {
         System.out.println(str.charAt(2));
         System.out.println(str.substring(2, 4));
 
+        int[] arr1 = { 0, 1, 2, 3, 4 };
+        int[][] arr2D = { { 11, 12 }, { 21, 22 } };
+
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.deepToString(arr2D));
+
     }
 
 }
