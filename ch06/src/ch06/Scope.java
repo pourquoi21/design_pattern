@@ -5,8 +5,33 @@ public class Scope {
     static int cv;
     int iv;
 
+    static int a;
+    static int b;
+
     public static void main(String[] args) {
         int lv;
+        a = 2;
+        b = 3;
+        System.out.println(add2());
+
+        Scope s = new Scope();
+
+        s.a = 3;
+        s.b = 4;
+
+        System.out.println(s.add(a, b));
+        System.out.println(s.add2()); // s의 a와 b를 주석처리했으므로 0나옴
+    }
+
+    String add(int a, int b) {
+        int c = a + b;
+        return Integer.toString(c); // 두 가지 방법 중 하나로 int > String 가능
+//        return String.valueOf(c);
+    }
+
+    static String add2() {
+        int c = a + b;
+        return String.valueOf(c);
     }
 
 }
