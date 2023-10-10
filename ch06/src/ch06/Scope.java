@@ -9,16 +9,18 @@ public class Scope {
     static int b;
 
     public static void main(String[] args) {
+        System.out.println("add2 first: " + add2());
         int lv;
         a = 2;
         b = 3;
-        System.out.println(add2());
+        System.out.println("add2 second: " + add2());
 
         Scope s = new Scope();
 
         s.a = 3;
         s.b = 4;
 
+        System.out.println("add2 third: " + add2());
         System.out.println(s.add(a, b));
         System.out.println(s.add2()); // s의 a와 b를 주석처리했으므로 0나옴
     }
