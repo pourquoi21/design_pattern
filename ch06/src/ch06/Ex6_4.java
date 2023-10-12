@@ -9,18 +9,30 @@ public class Ex6_4 {
         long result2 = mm.subtract(5L, 3L);
         long result3 = mm.multiply(5L, 3L);
         double result4 = mm.divide(5L, 3L);
-        String result5 = mm.big(3L, 3L);
+        String result5 = mm.max(5L, 3L);
+        mm.print99dan(5);
 
         System.out.println("add(5L, 3L) = " + result1);
         System.out.println("subtract(5L, 3L) = " + result2);
         System.out.println("multiply(5L, 3L) = " + result3);
         System.out.printf("divide(5L, 3L) = %3.3f \r\n", result4);
-        System.out.println("big(5L, 3L) = " + result5);
+        System.out.println("max(5L, 3L) = " + result5);
     }
 
 }
 
 class MyMath {
+
+    void print99dan(int dan) {
+
+        if (!(dan >= 2 && dan <= 9))
+            return;
+
+        for (int i = 1; i <= 9; i++) {
+            System.out.printf("%d * %d = %d%n", dan, i, dan * i);
+        }
+    }
+
     long add(long a, long b) {
         long result = a + b;
         return result;
@@ -41,7 +53,7 @@ class MyMath {
         return result;
     }
 
-    public String big(long l, long m) {
+    public String max(long l, long m) {
         String result;
 
         if (l > m)
