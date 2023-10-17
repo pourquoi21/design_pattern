@@ -27,6 +27,9 @@ public class Scope {
         change(s);
         System.out.println("after change(s) : a = " + s.a);
         System.out.println("after change(s) add = " + s.add(a, b));
+
+        change2(a);
+        System.out.println("after change2(s) : a = " + a);
     }
 
     String add(int a, int b) {
@@ -44,6 +47,11 @@ public class Scope {
         s.a = 2000;
         System.out.println("change() : a = " + s.a);
 
+    }
+
+    static void change2(int a) {
+        a = 3000;
+        System.out.println("change2() : a = " + a);
     }
 
 }
