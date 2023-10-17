@@ -13,6 +13,8 @@ public class Scope {
         int lv;
         a = 2;
         b = 3;
+
+        System.out.println("a of main : " + a);
         System.out.println("add2 second: " + add2());
 
         Scope s = new Scope();
@@ -24,8 +26,11 @@ public class Scope {
         System.out.println(s.add(a, b));
         System.out.println(s.add2()); // s의 a와 b를 주석처리했으므로 0나옴
 
+        System.out.println("a of main : " + a);
+        System.out.println("before change(s) : a = " + a);
         change(s);
-        System.out.println("after change(s) : a = " + s.a);
+        System.out.println("after change(s) : s.a = " + s.a);
+        System.out.println("after change(s) : a = " + a);
         System.out.println("after change(s) add = " + s.add(a, b));
 
         change2(a);
