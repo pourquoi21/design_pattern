@@ -24,7 +24,7 @@ public class Scope {
 
         System.out.println("add2 third: " + add2());
         System.out.println(s.add(a, b));
-        System.out.println(s.add2()); // s의 a와 b를 주석처리했으므로 0나옴
+        System.out.println(add2()); // s의 a와 b를 주석처리했으므로 0나옴
 
         System.out.println("a of main : " + a);
         System.out.println("before change(s) : a = " + a);
