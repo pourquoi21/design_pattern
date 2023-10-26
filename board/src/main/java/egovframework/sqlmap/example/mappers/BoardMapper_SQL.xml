@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="board.fwd.service.impl.BoardMapper">
+
+<!--     <resultMap id="sample" type="board.fwd.service.BoardVO">
+        <result property="id" column="id"/>
+        <result property="boardWriter" column="boardWriter"/>
+        <result property="boardPass" column="boardPass"/>
+        <result property="boardTitle" column="boardTitle"/>
+        <result property="boardContents" column="boardContents"/>
+        <result property="boardHits" column="boardHits"/>
+        <result property="boardCreatedTime" column="boardCreatedTime"/>
+    </resultMap> -->
+
+    <insert id="save" parameterType="BoardVO">
+        insert into board_table(boardWriter, boardPass, boardTitle, boardContents)
+        value(#{boardWriter}, #{boardPass}, #{boardTitle}, #{boardContents})
+    </insert>
+</mapper>
