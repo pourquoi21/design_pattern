@@ -15,7 +15,7 @@ public class TestClass {
 	}
 
 	static void staticMethod2() {
-		instanceMethod(); // 에러: 인스턴스메서드를 호출할 수 없다
+//		instanceMethod(); // 에러: 인스턴스메서드를 호출할 수 없다
 		staticMethod(); // static메서드는 호출할 수 있다.
 	}
 }
