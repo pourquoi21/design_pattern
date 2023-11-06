@@ -18,6 +18,8 @@ public class Car {
 
 	Car(String color, String gearType, int door) {
 
+		// 인스턴스 자신을 가리키는 this
+		// 인스턴스 메서드(생성자 포함)에서 사용가능
 		// 참조변수 this는 lv와 iv를 구별할 때 사용할 수 있다.
 		this.color = color;
 		this.gearType = gearType;

@@ -1,7 +1,12 @@
 package ch06;
 
 public class MyMath2 {
-	long a, b;
+	long a, b; // this.a, this.b가 해당 iv의 진짜 이름.
+
+	MyMath2(int a, int b) { // 생성자
+		this.a = a;
+		this.b = b;
+	}
 
 	long add() { // instance method
 		return a + b; // iv 사용
