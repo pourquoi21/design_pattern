@@ -16,9 +16,12 @@ public class Car {
 
 	}// 기본 생성자
 
-	Car(String c, String g, int d) {
-		color = c;
-		gearType = g;
-		door = d;
+	Car(String color, String gearType, int door) {
+
+		// 참조변수 this는 lv와 iv를 구별할 때 사용할 수 있다.
+		this.color = color;
+		this.gearType = gearType;
+		this.door = door;
+
 	}
 }
