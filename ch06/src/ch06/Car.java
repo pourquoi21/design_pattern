@@ -1,9 +1,12 @@
 package ch06;
 
 public class Car {
+
+	// 명시적 초기화
 	String color;
 	String gearType;
-	int door;
+	int door = 4; // 기본형 변수의 초기화
+	Engine e = new Engine(); // 참조형 변수의 초기화
 
 	Car() {
 //		color = "white";
@@ -24,6 +27,10 @@ public class Car {
 		this.color = color;
 		this.gearType = gearType;
 		this.door = door;
+
+	}
+
+	class Engine {
 
 	}
 }
