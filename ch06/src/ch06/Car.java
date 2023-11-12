@@ -30,7 +30,7 @@ public class Car {
 
 	}
 
-	class Engine {
+	static class Engine {
 
 	}
 }
