@@ -10,8 +10,12 @@ class Point {
 //}
 
 class Circle { // 포함
-	Point p = new Point();
+	Point p = new Point(); // 참조변수의 초기화: Point의 저장공간을 만들어주기
 	int r;
+
+	Circle() { // 만약 위에서 초기화를 안해줬으면 이렇게 생성자 이용해서 해줘야된다.
+		p = new Point();
+	}
 }
 
 public class InheritanceTest {
