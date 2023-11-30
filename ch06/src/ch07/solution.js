@@ -130,4 +130,71 @@
   	
     
     return answer;
+    
+    
+    // 풀고나니 레벨0문제였어서 너무 화가났던것들
+    class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        
+        // 주어진 수보다 작은 수들을 차례로 구함
+        for (int i = 1; i <= n; i++) {
+            
+            // 약수의 개수를 담을 변수 선언
+            int divisor = 0;
+            
+            // 숫자 i의 약수를 찾기 위해 순회
+            for (int j = 1; j <= i; j++) {
+                // i의 약수일 경우 변수에 담고
+                if (i % j == 0) {
+                    divisor += 1;
+                }
+                
+                // 약수가 3개가 되면 answer을 증가시키고, 해당 수에 대한 순회를 멈춘다
+                if (divisor == 3) {
+                    answer += 1;
+                    break;
+                }
+            }
+        }
+        
+        return answer;
+    }
+}
+
+class Solution {
+    public int solution(String[] spell, String[] dic) {
+        int answer = 0;
+        
+        // 단어가 spell에 있는 것으로만 이루어졌는지 확인할 boolean 변수 선언
+        boolean check = false;
+        
+        // dic의 단어 수만큼 순회하여 각 단어 추출
+        for (int i = 0; i < dic.length; i++) {
+            
+            // spell 요소 수만큼 순회
+            for (int j = 0; j < spell.length; j++) {
+                // dic의 i번째 단어를 검사해서 spell의 요소를 가지고 있는지 검사
+                if (!dic[i].contains(spell[j])) {
+                    // i번째 단어에 spell의 요소가 아닌 알파벳이 있으면
+                    // 일단 check는 false처리하고 해당 단어 검사는 끝냄
+                    check = false;
+                    break;
+                } else {
+                    // spell요소이면 true처리, 다음 알파벳 검사
+                    check = true;
+                }
+            }
+            // 해당 회차 단어가 spell의 요소로만 이루어졌다면 1, 아니라면 2 반환
+            if (check) {
+                answer = 1;
+                break;
+            } else {
+                answer = 2;
+            }
+        }
+        
+        return answer;
+    }
+}
 }
