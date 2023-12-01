@@ -196,5 +196,60 @@ class Solution {
         
         return answer;
     }
+   
 }
+
+
+// 모두를(나 포함..) 고민에 빠뜨린 코드
+
+function solution(number) {
+    var answer = 0;
+    
+    // arr는 수를 뽑고자 하는 원 배열, pick은 뽑고자 하는 개수
+    const getCombi = (arr, pick) => {
+        
+        const result = [];
+        
+        if (pick == 1) return arr.map(n => [n]);
+    
+        // forEach를 통해 배열을 순회한다
+        // 각 순회마다 선택된 수는 fixed, index는 그 수의 인덱스,
+        // origin은 순회하는 원래 배열
+        arr.forEach((fixed, index, origin) => {
+            
+            // 순회할 때마다 그 회차에 선택된 수는 제외하고
+            const rest = origin.slice(index + 1);
+            
+            // 제외된 배열에서 원래 뽑고자 하는 pick - 1만큼의 수를 고른다
+            const combi = getCombi(rest, pick - 1);
+            
+            // 선택된 수 + 새로 뽑은 (pick - 1)개의 수를 더해서 배열 만듦
+            const attached = combi.map(c => [fixed, ...c]);
+                        
+            result.push(...attached);
+        })
+        
+        
+       
+        // result배열을 리턴함으로써 combi에는 pick - 1, pick - 2...개의 수가 선택되어 들어감
+        return result;
+        
+    }
+    
+    
+    
+    const arr = getCombi(number, 3);
+    
+    console.log("arr :: " + "[" + arr + "]");
+    
+    // arr배열의 각 요소들은 length 3의 배열들일 것임.
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i][0] + arr[i][1] + arr[i][2] == 0) {
+            answer += 1;
+        }
+    }
+    
+    return answer;
+}
+
 }
