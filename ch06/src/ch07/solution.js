@@ -250,6 +250,17 @@ function solution(number) {
     }
     
     return answer;
+    
+   // 이건 뭐지 싶은 쉬운문제.. 
+    function solution(seoul) {
+    var answer = '';
+    
+    let idx = seoul.indexOf("Kim");
+        
+    answer = "김서방은 " + idx + "에 있다"
+    
+    return answer;
+}
 }
 
 }
