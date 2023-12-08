@@ -1,5 +1,6 @@
 package ch07;
 
+// 꼭 필요할 때만!
 import static java.lang.Math.PI;
 import static java.lang.Math.random;
 import static java.lang.System.out;
