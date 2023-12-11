@@ -1,7 +1,7 @@
 package ch06;
 
 public class StaticTest {
-	// 간단초기화(명시적 초기화)
+	// 간단초기화(명시적 초기화) <-> 생성자, etc..
 	static int width = 200; // 클래스 변수(static 변수)
 	static int height = 120; // 클래스 변수(static 변수)
 
