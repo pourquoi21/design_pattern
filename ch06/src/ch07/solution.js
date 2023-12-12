@@ -262,5 +262,15 @@ function solution(number) {
     return answer;
 }
 }
+// 효율이 좋지않은 답..
+//    while (callings.length > 0) {
+//         let win = callings.shift();
+//         let idx = players.findIndex(p => p == win);
+//         let overtook = players[idx - 1];
+//         players[idx - 1] = win;
+//         players[idx] = overtook;
+        
+//         answer = players;
+//     }
 
 }
