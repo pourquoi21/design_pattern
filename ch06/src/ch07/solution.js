@@ -273,4 +273,39 @@ function solution(number) {
 //         answer = players;
 //     }
 
+// 푸는중.. 쉬운줄 알았는데...
+function solution(id_list, report, k) {
+    let answer = [];
+    let reportNo = new Array(id_list.length).fill(0);
+    
+    // 중복된 값을 버리기 위해 set을 쓰고 싶었지만 set은 배열을 char로 나눠버림
+    // let reportSet = new Set(...report);
+
+    let reporter;
+    let warrior;
+    
+    let uniqRpt = report.filter((r, index) => {
+        return report.indexOf(r) == index;
+    })
+    
+    for (let i = 0; i < uniqRpt.length; i++) {
+        
+        reporter = uniqRpt[i].split(" ")[0];
+        warrior  = uniqRpt[i].split(" ")[1];
+        
+        let rptIdx = id_list.findIndex(i => i == reporter);
+        let warIdx = id_list.findIndex(i => i == warrior);
+        
+        // reporterIdx = id_list.findIndex(uniqRpt[i].split(" ")[0]);
+        // warriorIdx = id_list.findIndex(uniqRpt[i].split(" ")[1]);
+        console.log(rptIdx, warIdx);
+        reportNo[rptIdx] += 1;
+        
+    }
+    
+    console.log(reportNo);
+    
+    return answer;
+}
+
 }
