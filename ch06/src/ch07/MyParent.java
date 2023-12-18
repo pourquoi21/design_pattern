@@ -1,6 +1,6 @@
 package ch07;
 
-class MyParent {
+public class MyParent {
 	private int prv; // 같은 클래스
 	int dft; // 같은 패키지
 	protected int prt; // 같은 패키지 + 자손(다른 패키지)
@@ -14,10 +14,10 @@ class MyParent {
 	}
 }
 
-public class MyParentTest {
+class MyParentTest {
 	public static void main(String[] args) {
 		MyParent p = new MyParent();
-		System.out.println(p.prv); // 에러
+//		System.out.println(p.prv); // 에러
 		System.out.println(p.dft);
 		System.out.println(p.prt);
 		System.out.println(p.pub);
