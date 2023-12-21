@@ -309,5 +309,26 @@ function solution(id_list, report, k) {
 }
 
 
+// 해시맵?
+public class Main {
+    public static void main(String[] args) {
+        // Map.of()를 사용하여 key-value 쌍 추가
+        Map<String, Integer> myMap = Map.of(
+            "apple", 5,
+            "banana", 10,
+            "orange", 7
+        );
+
+        // key로 value 얻기
+        int value = myMap.get("apple");
+        System.out.println("Value of 'apple': " + value);
+
+        // 모든 key-value 쌍 출력
+        for (Map.Entry<String, Integer> entry : myMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+    }
+}
+
 
 }
