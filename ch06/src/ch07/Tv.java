@@ -20,4 +20,8 @@ class SmartTv extends Tv {
 
 	void caption() {
 	}
+
+	public static void main(String[] args) {
+		Tv t = new SmartTv(); // 다형성: 타입 불일치
+	}
 }
