@@ -349,4 +349,31 @@ public class Main {
 
     return results; // 결과 담긴 results return
 }
+
+class Solution {
+    public int solution(long num) {
+        int answer = 0;
+        
+        while (num != 1) {               
+            if (num % 2 == 0) {
+                num /= 2;            
+                System.out.println(answer + " " + num);
+            } else {
+                num = num * 3 + 1;            
+                System.out.println(answer + " " + num);
+            }
+            
+            answer++;
+            
+            if (answer == 500) {
+                answer = -1;
+                return answer;
+            }
+        }
+        
+
+        
+        return answer;
+    }
+}
 }
