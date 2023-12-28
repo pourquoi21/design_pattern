@@ -376,4 +376,8 @@ class Solution {
         return answer;
     }
 }
+//중복제거 배열 만들기
+    let uniqRpt = report.filter((r, index) => {
+        return report.indexOf(r) == index;
+    })
 }
