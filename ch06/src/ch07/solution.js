@@ -380,4 +380,73 @@ class Solution {
     let uniqRpt = report.filter((r, index) => {
         return report.indexOf(r) == index;
     })
+    
+    // 나름대로 열심히!
+    function solution(bandage, health, attacks) {
+    var answer = 0;
+    
+    // 연속회복에 필요한 시간, 회복량, 추가회복량
+    let [healTime, heal, addedHeal] = bandage;
+    
+    // 공격받는 시간
+    let attackTime = attacks.map(([attackTime, damage]) => attackTime);
+    
+    // 데미지
+    let damage = attacks.map(([attackTime, damage]) => damage);
+    
+    // 체력과 현재hp 구분하기 위해 현재hp 의미하는 변수 만듦
+    let currentHp = health;
+    
+    let sec = 0; // 경과시간
+    let successive = 0; // 연속성공 체크용
+    
+    // 몬스터의 최종 공격시간까지는 루프를 계속 돌도록 함
+    while (sec < attacks[attacks.length - 1][0]) {
+        sec++;
+        successive++;
+        
+        // 현재 초가 공격받을 시간이라면
+        if (attackTime.indexOf(sec) != -1) {
+            // console.log("it hurts!");
+            // console.log(attackTime.indexOf(sec));
+            
+            // 인덱스를 구해서 데미지값도 구하여 hp에서 뺌
+            let idx = attackTime.indexOf(sec);
+            currentHp -= damage[idx];
+            
+            // 공격으로 인해 연속회복 실패 -> 초기화
+            successive = 0;
+            
+            // hp가 0이하가 되면 사망처리
+            if (currentHp <= 0) {
+                currentHp = -1;
+                break;
+                // console.log("you died : " + currentHp);
+            }
+        // 현재 시간에 공격을 받지 않는다면
+        } else {
+            // 현재 hp가 체력보다 적으면 회복
+            if (currentHp < health) {
+                currentHp += heal;
+                // 연속회복에 성공했다면 연속회복 초기화, 추가회복
+                if (successive == healTime) {
+                    successive = 0;
+                    currentHp += addedHeal;
+                }
+                
+                // hp가 체력을 넘어서면 그냥 체력값으로 세팅
+                if (currentHp > health) {
+                    successive = 0;
+                    currentHp = health;
+                }           
+            }
+        }
+        // console.log("sec :: " + sec);
+        // console.log("successive :: " + successive);
+        // console.log("currentHp :: " + currentHp);
+    }
+    answer = currentHp;
+    
+    return answer;
+}
 }
