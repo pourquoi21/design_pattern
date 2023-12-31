@@ -14,6 +14,7 @@ public class Ex7_7 {
 		FireEngine fe4 = (FireEngine) car3;
 		fe4.water(); // 여기서 nullpointerexception나옴
 		car3.drive();
+		// 따라서 형변환을 할 때는 실제 인스턴스가 무엇인지가 중요하다.
 
 		fe.water();
 		car = fe; // car = (Car)fe;에서 형변환이 생략됨
