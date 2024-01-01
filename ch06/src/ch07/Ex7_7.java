@@ -22,6 +22,9 @@ public class Ex7_7 {
 		fe2 = (FireEngine) car; // 조상타입 > 자손타입이므로 멤버수가 늘어남(형변환 생략불가)
 		fe2.water();
 
+		Car c = new Car();
+		FireEngine fe5 = (FireEngine) c;
+		fe.water(); // 컴파일은 되지만
 	}
 
 }
