@@ -22,11 +22,27 @@ public class Ex7_7 {
 //		fe2 = (FireEngine) car; // 조상타입 > 자손타입이므로 멤버수가 늘어남(형변환 생략불가)
 //		fe2.water();
 
-		Car c = new Car();
-		FireEngine fe5 = (FireEngine) c;
-		fe5.water(); // 컴파일은 되지만 형변환 에러(런타임에러) classCastException 발생
+//		Car c = new Car();
+//		FireEngine fe5 = (FireEngine) c;
+//		fe5.water(); // 컴파일은 되지만 형변환 에러(런타임에러) classCastException 발생
 		// 조상 -> 자손은 안되는 것 같다(멤버수가 늘어날때..)
-		// 원래 car 인스턴스였으므로 water()라는 멤버가 없으므로 안된다.
+		// 원래 car 인스턴스였기에 water()라는 멤버가 없으므로 안된다.
+		doWork(car);
+		doWork2(fe);
+	}
+
+	static void doWork(Car c) {
+		if (c instanceof FireEngine) { // 형변환이 가능한지 확인
+			FireEngine fe = (FireEngine) c; // 형변환
+			fe.water();
+		}
+	}
+
+	static void doWork2(FireEngine fe) {
+		if (fe instanceof Car) { // 형변환이 가능한지 확인
+			Car c = (Car) fe; // 형변환
+			fe.stop();
+		}
 	}
 
 }
