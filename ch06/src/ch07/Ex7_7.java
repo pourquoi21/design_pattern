@@ -28,7 +28,7 @@ public class Ex7_7 {
 		// 조상 -> 자손은 안되는 것 같다(멤버수가 늘어날때..)
 		// 원래 car 인스턴스였기에 water()라는 멤버가 없으므로 안된다.
 		doWork(car);
-		doWork2(fe);
+		doWork2(fe); // 이것만 실행된다.
 	}
 
 	static void doWork(Car c) {
