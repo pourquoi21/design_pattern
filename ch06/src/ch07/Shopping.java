@@ -5,7 +5,7 @@ public class Shopping {
 	public static void main(String[] args) {
 		Buyer b = new Buyer();
 
-		Television tv = new Television();
+		Tv1 tv = new Tv1();
 		Computer com = new Computer();
 
 		// buy메서드 선언시 인자를 Product타입으로 했기에
@@ -21,7 +21,8 @@ class Product {
 	int bonusPoint; // 보너스점수
 }
 
-class Television extends Product {
+class Tv1 extends Product {
+
 }
 
 class Computer extends Product {
