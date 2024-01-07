@@ -19,10 +19,17 @@ public class Shopping {
 class Product {
 	int price; // 제품가격
 	int bonusPoint; // 보너스점수
+
+	Product(int price) {
+		this.price = price;
+		bonusPoint = (int) (price / 10.0);
+	}
 }
 
 class Tv1 extends Product {
-
+	Tv1() {
+		super(100);
+	}
 }
 
 class Computer extends Product {
