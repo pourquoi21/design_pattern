@@ -5,6 +5,7 @@ public class Ex7_7 {
 	public static void main(String[] args) {
 		Car car = null;
 		FireEngine fe = new FireEngine();
+		Car c = new FireEngine();
 //		FireEngine fe2 = null;
 //		FireEngine fe3 = (FireEngine) car; // 조상 -> 자손으로 형변환
 //		Car car2 = (Car) fe2; // 자손 -> 조상으로 형변환
@@ -27,8 +28,13 @@ public class Ex7_7 {
 //		fe5.water(); // 컴파일은 되지만 형변환 에러(런타임에러) classCastException 발생
 		// 조상 -> 자손은 안되는 것 같다(멤버수가 늘어날때..)
 		// 원래 car 인스턴스였기에 water()라는 멤버가 없으므로 안된다.
+		doWork(c); // 이것도 된다.
 		doWork(car);
 		doWork2(fe); // 이것만 실행된다.
+
+		// 조상형태로 자식 만들었을때
+		// 그 자식의 메서드는 쓸수없지만
+		// 조상을 사용하는 메서드에서 자식대신 그 조상형태의 변수를 사용할수 있다.
 	}
 
 	static void doWork(Car c) {
