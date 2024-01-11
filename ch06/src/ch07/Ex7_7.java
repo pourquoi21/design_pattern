@@ -5,6 +5,7 @@ public class Ex7_7 {
 	public static void main(String[] args) {
 		Car car = null;
 		FireEngine fe = new FireEngine();
+		// 아버지가 자식 낳음(?)
 		Car c = new FireEngine();
 //		FireEngine fe2 = null;
 //		FireEngine fe3 = (FireEngine) car; // 조상 -> 자손으로 형변환
