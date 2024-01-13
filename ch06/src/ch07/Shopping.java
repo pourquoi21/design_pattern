@@ -23,6 +23,15 @@ public class Shopping {
 
 		System.out.println("현재 남은 돈은 " + b.money + "만원입니다.");
 		System.out.println("현재 마일리지는 " + b.bonusPoint + "입니다.");
+
+		Product p1 = new Tv1();
+		Product p2 = new Computer();
+		Product p3 = new Audio();
+
+		Product p[] = new Product[3];
+		p[0] = new Tv1();
+		p[1] = new Computer();
+		p[2] = new Audio();
 	}
 
 }
