@@ -86,6 +86,10 @@ class Buyer { // 물건사는 사람
 //		money -= t.price; // 다른 가전제품을 사기 위해서
 //		bonusPoint += t.bonusPoint; // overloading을 계속 해야 한다.
 //	}
+	// 다형성 덕분에 하나의 배열에 여러가지 객체 담을수 있다.
+	Product[] cart = new Product[10];
+
+	int i = 0;
 
 	// 참조형 매개변수는 메서드 호출시 자신과 같은 타입 또는 자손타입의 인스턴스를 넘겨줄 수 있다.
 	void buy(Product p) {
