@@ -100,6 +100,7 @@ class Buyer { // 물건사는 사람
 		}
 		money -= p.price;
 		bonusPoint += p.bonusPoint;
+		cart[i++] = p; // 카트의 다음 칸에 다음 상품을 저장하기 위해 i++을 하다니..
 
 		// 참조변수와 문자열 결합할 때는 변수.toString()써야 하는데 우리는 이미 선언해주었음
 		System.out.println(p + "을/를 구입하셨습니다.");
