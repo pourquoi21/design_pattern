@@ -65,4 +65,9 @@ class Buyer2 {
 		cart[i++] = p;
 		System.out.println(p + "을/를 구입하셨습니다.");
 	}
+
+	void summary() {
+		int sum = 0;
+		String itemList = "";
+	}
 }
