@@ -69,5 +69,14 @@ class Buyer2 {
 	void summary() {
 		int sum = 0;
 		String itemList = "";
+
+		for (int i = 0; i < cart.length; i++) {
+			if (cart[i] == null) {
+				break;
+			}
+
+			sum += cart[i].price;
+			itemList += cart[i] + ", ";
+		}
 	}
 }
