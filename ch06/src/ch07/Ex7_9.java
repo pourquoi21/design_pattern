@@ -1,7 +1,15 @@
 package ch07;
 
 public class Ex7_9 {
+	public static void main(String[] args) {
+		Buyer2 b = new Buyer2();
 
+		b.buy(new Tv2());
+		b.buy(new Computer2());
+		b.buy(new Audio2());
+
+		b.summary();
+	}
 }
 
 class Product2 {
@@ -78,5 +86,8 @@ class Buyer2 {
 			sum += cart[i].price;
 			itemList += cart[i] + ", ";
 		}
+
+		System.out.println("구입하신 물품의 총 금액은 " + sum + "만원입니다.");
+		System.out.println("구입하신 제품은 " + itemList + "입니다.");
 	}
 }
