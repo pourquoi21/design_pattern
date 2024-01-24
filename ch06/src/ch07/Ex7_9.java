@@ -71,7 +71,7 @@ class Buyer2 {
 		money -= p.price;
 		bonusPoint += p.bonusPoint;
 		cart[i++] = p;
-		System.out.println(p + "을/를 구입하셨습니다.");
+		System.out.println(p + "을/를 구입하셨습니다."); // p.toString()
 	}
 
 	void summary() {
