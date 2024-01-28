@@ -11,13 +11,14 @@ public abstract class Player { // 추상클래스(미완성 클래스)
 		Player p = new Player(); // 에러: 추상클래스의 인스턴스 생성 불가
 
 		AudioPlayer ap = new AudioPlayer(); // 이건 가능
+		Player ap2 = new AudioPlayer(); // 이것도 가능(자손이니까)
 	}
 }
 
 // 상속을 통해 추상메서드를 완성해야 인스턴스 생성 가능
 class AudioPlayer extends Player {
 	void play(int pos) {
-	}; // 추상메서드를 구현
+	}; // 추상메서드를 구현했으므로 더이상 추상메서드가 아니다.
 
 	void stop() {
 	}; // 추상메서드를 구현
