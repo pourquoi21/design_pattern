@@ -23,3 +23,9 @@ class AudioPlayer extends Player { // 완성된 설계도
 	void stop() {
 	}; // 추상메서드를 구현
 }
+
+// 상속받은 메서드 중 메서드 하나만 구현할 것이라면 반드시 abstract 붙여줘야 한다.
+abstract class AbstractPlayer extends Player {
+	void play(int pos) {
+	}
+}
