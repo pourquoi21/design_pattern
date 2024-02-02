@@ -5,6 +5,11 @@ public abstract class Player { // 추상클래스(미완성 클래스)
 	boolean pause; // 중지
 	int currentPos;
 
+	Player() {
+		pause = false;
+		currentPos = 0;
+	}
+
 	abstract void play(int pos); // 추상메서드(몸통{}이 없는 미완성 메서드)
 
 	abstract void stop(); // 추상메서드
@@ -16,6 +21,10 @@ public abstract class Player { // 추상클래스(미완성 클래스)
 
 		AudioPlayer ap = new AudioPlayer(); // 이건 가능
 		Player ap2 = new AudioPlayer(); // 이것도 가능(자손이니까), 조상은 변수만 제공하고있는 것
+	}
+
+	void play() {
+		play(currentPos); // 추상메서드를 사용할 수 있다.
 	}
 }
 
