@@ -2,10 +2,10 @@ package ch07;
 
 public abstract class Player { // 추상클래스(미완성 클래스)
 
-	boolean pause; // 중지
-	int currentPos;
+	boolean pause; // 일시정지 상태를 저장하기 위한 변수
+	int currentPos; // 현재 play되고 있는 위치를 저장하기 위한 변수
 
-	Player() {
+	Player() { // 추상클래스도 생성자가 필요하다.
 		pause = false;
 		currentPos = 0;
 	}
