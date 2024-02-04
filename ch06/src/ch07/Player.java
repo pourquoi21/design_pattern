@@ -25,6 +25,7 @@ public abstract class Player { // 추상클래스(미완성 클래스)
 
 	void play() {
 		play(currentPos); // 추상메서드를 사용할 수 있다.
+		// 어차피 객체 생성한 후에 호출할 수 있기 때문에 여기에 선언해주는건 상관없음
 	}
 }
 
