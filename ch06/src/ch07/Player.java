@@ -10,6 +10,10 @@ public abstract class Player { // 추상클래스(미완성 클래스)
 		currentPos = 0;
 	}
 
+	// 아래의 두 추상메서드는 몸통이 없기 때문에
+	// 반드시 자식클래스에서 제대로 구현해주어야 한다.
+	// abstract를 붙임으로써 구현을 강제한다는 점에서
+	// 필수적인 부분을 강조하는 것으로도 볼 수 있음.
 	abstract void play(int pos); // 추상메서드(몸통{}이 없는 미완성 메서드)
 
 	abstract void stop(); // 추상메서드
