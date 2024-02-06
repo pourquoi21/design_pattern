@@ -2,6 +2,9 @@ package ch07;
 
 public abstract class Player { // 추상클래스(미완성 클래스)
 
+	// 추상메서드: 미완성메서드
+	// 추상클래스: 추상메서드를 가진 클래스
+
 	boolean pause; // 일시정지 상태를 저장하기 위한 변수
 	int currentPos; // 현재 play되고 있는 위치를 저장하기 위한 변수
 
@@ -39,6 +42,7 @@ class AudioPlayer extends Player { // 완성된 설계도
 	}; // 추상메서드를 구현했으므로 더이상 추상메서드가 아니다.
 
 	void stop() {
+
 	}; // 추상메서드를 구현
 }
 
