@@ -449,4 +449,154 @@ class Solution {
     
     return answer;
 }
+
+
+function solution(park, routes) {
+    var answer = [];
+    let start = findStart(park);
+    let currentLoc = start;
+    answer = start;
+    
+    for (let i = 0; i < routes.length; i++) {
+        
+        let [direction, distance] = routes[i].split(" ");
+        
+        
+        // result[0]이 N/S, result[1]이 E/W
+        // 한 칸 움직일 때마다 검사해야함
+        
+        if (direction == 'N') {
+            
+            let valid = true;
+            let currentLocH = answer[1];
+            let locV;
+            for(let i = 0; i < +distance; i++) {
+                
+                if (currentLoc[0] == 0) {
+                    valid = false;
+                    break;
+                }
+                
+                locV = currentLoc[0] - 1;
+                
+                if (park[locV][currentLocH] == 'X' || !park[locV][currentLocH]) {
+                    valid = false;
+                    break;
+                } else {
+                    currentLoc = [locV, currentLocH];
+                }
+           
+                
+             }
+            
+            if (valid) {
+                answer = currentLoc;
+            } else {
+                currentLoc = answer;
+            }
+            
+        } else if (direction == 'S') {
+            let valid = true;
+            let currentLocH = answer[1];
+            let locV;
+            for(let i = 0; i < +distance; i++) {
+                if (currentLoc[0] == park.length) {
+                    valid = false;
+                    break;
+                }
+                
+                locV = currentLoc[0] + 1;
+                
+                if (park[locV][currentLocH] == 'X' || !park[locV][currentLocH]) {
+                    valid = false;
+                    break;
+                } else {
+                    currentLoc = [locV, currentLocH];
+                }
+                           
+            }
+            
+            if (valid) {
+                answer = currentLoc;
+            } else {
+                currentLoc = answer;
+            }
+            
+        } else if (direction == 'W') {
+            let valid = true;
+            let currentLocV = answer[0];
+            let locH;
+            for(let i = 0; i < +distance; i++) {
+                if (currentLoc[1] == 0) {
+                    valid = false;
+                    break;
+                }
+                
+                locH = currentLoc[1] - 1;
+                
+                if (locH < 0) {
+                    valid = false;
+                    break;
+                }
+
+                if (park[currentLocV][locH] == 'X' || !park[currentLocV][locH]) {
+                    valid = false;
+                    break;
+                } else {
+                    currentLoc = [currentLocV, locH];
+                }
+           
+                
+            }
+            
+            if (valid) {
+                answer = currentLoc;
+            } else {
+                currentLoc = answer;
+            }
+            
+        } else if (direction == 'E') {
+            let valid = true;
+            let currentLocV = answer[0];
+            let locH;
+            for(let i = 0; i < +distance; i++) {
+                if (currentLoc[0] == park[0].length) {
+                    valid = false;
+                    break;
+                }
+                locH = currentLoc[1] + 1;
+
+                if (park[currentLocV][locH] == 'X' || !park[currentLocV][locH]) {
+                    valid = false;
+                    break;
+                } else {
+                    currentLoc = [currentLocV, locH];
+                }
+                
+            }
+            
+            if (valid) {
+                answer = currentLoc;
+            } else {
+                currentLoc = answer;
+            }
+
+        }
+    }
+    
+    return answer;
+}
+    
+function findStart(park) {
+        // park의 행을 순회
+    for (let i = 0; i < park.length; i++) {
+        // park의 열을 순회
+        for (let j = 0; j < park[i].length; j++) {
+            // 해당 행*열에 S가 있으면
+            if (park[i][j] == 'S') {
+                return [i, j]
+            }
+        }
+    }
+}
 }
