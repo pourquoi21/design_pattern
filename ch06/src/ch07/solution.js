@@ -500,7 +500,7 @@ function solution(park, routes) {
             let currentLocH = answer[1];
             let locV;
             for(let i = 0; i < +distance; i++) {
-                if (currentLoc[0] == park.length) {
+                if (currentLoc[0] == park.length-1) {
                     valid = false;
                     break;
                 }
@@ -560,7 +560,7 @@ function solution(park, routes) {
             let currentLocV = answer[0];
             let locH;
             for(let i = 0; i < +distance; i++) {
-                if (currentLoc[0] == park[0].length) {
+                if (currentLoc[0] == park[0].length-1) {
                     valid = false;
                     break;
                 }
