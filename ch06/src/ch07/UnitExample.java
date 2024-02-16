@@ -16,3 +16,7 @@ class MarineEx extends UnitExample {
 	void stimPack() {
 	}
 }
+
+class TankEx extends UnitExample {
+
+}
