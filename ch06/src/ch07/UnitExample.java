@@ -18,5 +18,7 @@ class MarineEx extends UnitExample {
 }
 
 class TankEx extends UnitExample {
+	void move(int x, int y) {
 
+	}
 }
