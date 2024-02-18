@@ -21,4 +21,18 @@ class TankEx extends UnitExample {
 	void move(int x, int y) {
 
 	}
+
+	void changeMode() {
+	}
+}
+
+class DropshipEx extends UnitExample {
+	void move(int x, int y) {
+	}
+
+	void load() {
+	}
+
+	void unload() {
+	}
 }
