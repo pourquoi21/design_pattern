@@ -599,4 +599,32 @@ function findStart(park) {
         }
     }
 }
+
+
+function solution(a, b) {
+    var answer = '';
+    let day = 0;
+    
+    let weekDays = {
+        0 : "SUN",
+        1 : "MON",
+        2 : "TUE",
+        3 : "WED",
+        4 : "THU",
+        5 : "FRI",
+        6 : "SAT"
+    }
+    
+    for (let i = 1; i < a; i++) {
+        switch (i) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+        }
+    }
+    
+    return answer;
+}
 }
