@@ -622,6 +622,7 @@ function solution(a, b) {
             case 5:
             case 7:
             case 8:
+				// switch문에 break쓰는거 까먹으면 안됨..
         }
     }
     
