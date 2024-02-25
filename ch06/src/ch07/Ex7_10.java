@@ -9,6 +9,8 @@ public class Ex7_10 {
 		 * group[2] = new Dropship();
 		 */
 
+		// Object타입으로 만들면 당연히 move메서드를 쓸 수없다.
+
 		for (int i = 0; i < group.length; i++) {
 			group[i].move(100, 200);
 		}
