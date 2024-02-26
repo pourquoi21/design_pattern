@@ -3,6 +3,8 @@ package ch07;
 public class Ex7_10 {
 
 	public static void main(String[] args) {
+		// 구체화하지 않고 Unit이라는 형태로 선언하면
+		// 나중에 변화에 유리해진다.
 		Unit[] group = { new Marine(), new Tank(), new Dropship() };
 		/*
 		 * Unit[] group = new Unit[3]; group[0] = new Marine(); group[1] = new Tank();
