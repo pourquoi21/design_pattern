@@ -628,4 +628,8 @@ function solution(a, b) {
     
     return answer;
 }
+
+players.forEach((player, index) => {
+      positions[player] = (positions[player] | 0) + index;
+     }) // 비트연산..!!
 }
