@@ -632,4 +632,6 @@ function solution(a, b) {
 players.forEach((player, index) => {
       positions[player] = (positions[player] | 0) + index;
      }) // 비트연산..!!
+     
+
 }
