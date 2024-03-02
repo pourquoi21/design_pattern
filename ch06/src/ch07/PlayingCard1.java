@@ -12,5 +12,5 @@ public interface PlayingCard1 {
 	String getCardKind1(); // 몸통이 없다? : public abstract가 생략됨
 	// interface의 메서드는 항상 public / abstract니까
 
-	// 인터페이스는 다중상속 가능
+	// 인터페이스는 다중상속 가능(몸통이 없으므로 충돌 문제가없음)
 }
