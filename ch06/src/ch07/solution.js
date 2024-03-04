@@ -633,5 +633,17 @@ players.forEach((player, index) => {
       positions[player] = (positions[player] | 0) + index;
      }) // 비트연산..!!
      
+      for (let i = 0; i <= report.length; i++) {
+        
+        // id_list이용해서 신고자 인덱스 구하기
+        reporter = report[i].split(" ")[0];
+        let rptIdx = id_list.findIndex(i => i == reporter);
+        
+        if (superAgro.includes(report[i].split(" ")[1])) {
+            reportNo[rptIdx] += 1;
+        } else {
+            break;
+        }
+    } // 왜안되는건지 이해가안감...
 
 }
