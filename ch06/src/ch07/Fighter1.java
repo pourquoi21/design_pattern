@@ -1,6 +1,6 @@
 package ch07;
 
-public class Fighter1 implements Fightable1 {
+public class Fighter1 extends Unit implements Fightable1 {
 	// 인터페이스에 정의된 추상메서드를 모두 구현해야 한다.
 	public void move(int x, int y) {
 	};
