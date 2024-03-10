@@ -29,6 +29,9 @@ abstract class Unit {
 
 	void stop() {
 		/* 현재 위치에 정지 */}
+
+	void attack(Unit u) {
+	}
 }
 
 class Marine extends Unit {
