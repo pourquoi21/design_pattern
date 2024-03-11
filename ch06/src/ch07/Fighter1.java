@@ -11,6 +11,12 @@ public class Fighter1 extends UnitExample implements Fightable1 {
 		System.out.println("class type");
 	};
 
+	// 인터페이스를 메서드의 리턴타입으로 지정할 수도 있다.
+	// 활용은 아래에서..
+	static Fightable1 method() {
+		return new Fighter1();
+	}
+
 	public static void main(String[] args) {
 		// 인터페이스일 경우에도 조상클래스로 자손객체 가리킬수있다.
 		// 이럴 경우 인터페이스가 구현한 메서드만 쓸 수있다.
@@ -38,6 +44,10 @@ public class Fighter1 extends UnitExample implements Fightable1 {
 		UnitExample u = new UnitExample();
 
 		u.attack(new UnitExample());
+
+		Fightable1 f2 = method();
+		// 당연히 아래는 안된다.
+		UnitExample u2 = method();
 	}
 	// 일부만 구현하는 경우 클래스 앞에 abstract 붙여야함.
 
