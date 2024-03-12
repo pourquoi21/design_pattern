@@ -14,6 +14,8 @@ public class Fighter1 extends UnitExample implements Fightable1 {
 	// 인터페이스를 메서드의 리턴타입으로 지정할 수도 있다.
 	// 활용은 아래에서..
 	static Fightable1 method() {
+		// 반환 타입은 Fightable1이지만 Fighter1를 return해도 에러안난다.
+		// 왜냐하면 Fighter1는 Fightable1로 형변환 가능하기때문에.
 		return new Fighter1();
 	}
 
