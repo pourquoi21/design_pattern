@@ -3,6 +3,7 @@ package ch07;
 abstract class Unit1 {
 	int x, y;
 
+	// abstract
 	abstract void move(int x, int y);
 
 	void stop() {
