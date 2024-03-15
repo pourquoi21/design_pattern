@@ -11,6 +11,10 @@ abstract class Unit1 {
 	}
 }
 
+interface Fightable2 {
+	void move(int x, int y); // public abstract 생략됨
+}
+
 public class FighterTest1 {
 
 	public static void main(String[] args) {
