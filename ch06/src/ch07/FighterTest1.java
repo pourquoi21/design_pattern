@@ -13,6 +13,8 @@ abstract class Unit1 {
 
 interface Fightable2 {
 	void move(int x, int y); // public abstract 생략됨
+
+	void attack(Fightable2 f);
 }
 
 public class FighterTest1 {
