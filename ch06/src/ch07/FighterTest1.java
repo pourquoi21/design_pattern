@@ -17,6 +17,14 @@ interface Fightable2 {
 	void attack(Fightable2 f);
 }
 
+class Fighter2 extends Unit1 implements Fightable2 {
+	void move(int x, int y) {
+	}
+
+	void attack(Fightable2 f) {
+	};
+}
+
 public class FighterTest1 {
 
 	public static void main(String[] args) {
