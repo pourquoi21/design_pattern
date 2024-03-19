@@ -43,6 +43,9 @@ public class FighterTest1 {
 //		Fightable2 f = new Fighter2();
 //		f.move(100, 200);
 //		f.attack(new Fighter2());
+//		위는 아래와 같다:
+//		Fightable2 f2 = new Fighter2();
+//		f.attack(f2);
 		Fighter2 f = new Fighter2();
 
 		Fightable2 f2 = f.getFightable();
