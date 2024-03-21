@@ -11,6 +11,8 @@ abstract class Unit1 {
 	}
 }
 
+// 인터페이스는 중간 역할을 하며
+// 껍데기와 같다.
 interface Fightable2 { // 인터페이스의 모든 메서드는 public abstract임
 	void move(int x, int y); // public abstract 생략됨
 
