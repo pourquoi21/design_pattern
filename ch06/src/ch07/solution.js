@@ -645,5 +645,7 @@ players.forEach((player, index) => {
             break;
         }
     } // 왜안되는건지 이해가안감...
+    
+    Map.entry<> map : mapName.entires
 
 }
