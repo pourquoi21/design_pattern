@@ -12,11 +12,17 @@ class B {
 	}
 }
 
+class C1 {
+	public void method() {
+
+	}
+}
+
 public class InterfaceTest {
 
 	public static void main(String[] args) {
 		A a = new A();
-
+		a.method(new B()); // A가 B를 사용(의존)
 	}
 
 }
