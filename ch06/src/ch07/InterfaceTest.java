@@ -41,7 +41,7 @@ public class InterfaceTest {
 	public static void main(String[] args) {
 		A a = new A();
 		a.method(new B()); // A가 B를 사용(의존)
-		a.method(new C1());
+		a.method(new C1()); // A가 C1도 사용할 수 있다.
 
 		// C클래스를 인자로 쓰고 싶으면
 //		a.method(new C());
