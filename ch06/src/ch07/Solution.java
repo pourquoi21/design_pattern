@@ -66,43 +66,48 @@ public class Solution {
 	public static int robMemo(int[] nums) {
 		Map<Integer, Integer> memo = new HashMap<>();
 
-		return robMemoF(nums, 0, memo);
+		System.out.println("robMemo :: " + robMemoF(nums, 0, memo));
 
+		return robMemoF(nums, 0, memo);
 	}
 
 	public static int robMemoF(int[] nums, int start, Map<Integer, Integer> memo) {
+
+		int maxAmount = 0;
 
 		if (memo.containsKey(start)) {
 			return memo.get(start);
 		}
 
 		if (start >= nums.length) {
-			memo.put(start, 0);
+			return 0;
 		} else {
-			int result = Math.max(nums[start] + robMemoF(nums, start + 2, memo), robMemoF(nums, start + 1, memo));
-			memo.put(start, result);
+
+			int robCurrent = nums[start] + robMemoF(nums, start + 2, memo);
+			int skipCurrent = robMemoF(nums, start + 1, memo);
+			maxAmount = Math.max(robCurrent, skipCurrent);
+			memo.put(start, maxAmount);
 		}
 
-		return memo.get(start);
+		return maxAmount;
 	}
 
 	public static int robBU(int[] nums) {
-		System.out.println(robBUF(nums, 0));
 
-		return robBUF(nums, 0);
-	}
+		if (nums == null || nums.length == 0) {
+			return 0;
+		}
 
-	public static int robBUF(int[] nums, int start) {
-		int[] dp = new int[nums.length + 1];
-
+		int n = nums.length;
+		int[] dp = new int[n + 1];
 		dp[0] = 0;
 		dp[1] = nums[0];
 
-		for (int i = 2; i < dp.length; i++) {
-			dp[i] = Math.max(nums[i - 1] + dp[i - 2], dp[i - 1]);
+		for (int i = 2; i <= n; i++) {
+			dp[i] = Math.max(dp[i - 2] + nums[i - 1], dp[i - 1]);
 		}
 
-		return dp[dp.length - 1];
+		return dp[n];
 	}
 
 	public static int robEdit(int[] nums) {
@@ -118,6 +123,22 @@ public class Solution {
 		return dp[1];
 	}
 
+	public static int stairs(int n) {
+		int[] oneTwo = { 1, 2 };
+
+		for (int i = 3; i <= n; i++) {
+			int tmp = oneTwo[1];
+
+			oneTwo[1] = oneTwo[0] + oneTwo[1];
+			oneTwo[0] = tmp;
+		}
+
+		System.out.println(oneTwo[0] + " " + oneTwo[1]);
+
+		return oneTwo[1];
+
+	}
+
 	public static boolean wordDict(String s, String[] wordDict) {
 
 		String[] memo = {};
@@ -131,16 +152,12 @@ public class Solution {
 		int[] robArr = { 1, 2, 3, 1 };
 
 		s.fib(1000);
-
 		s.fillRectangle(5);
-
 		s.rob(robArr);
-
 		s.robMemo(robArr);
-
 		s.robBU(robArr);
-
 		s.robEdit(robArr);
+		s.stairs(5);
 
 	}
 
