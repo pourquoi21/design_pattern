@@ -180,6 +180,31 @@ public class Solution {
 		return dpArr[1][3];
 	}
 
+	public static int maxSubArr(int[] arr) {
+		int[] dp = new int[arr.length];
+		int max = arr[0];
+
+		// 첫 번째 방법: arr배열의 index0부터 끝까지 합을 구하는 형식
+		for (int i = 1; i < dp.length; i++) {
+			if (dp[i - 1] + arr[i] < 0) {
+				dp[i] = 0;
+			} else {
+				dp[i] = dp[i - 1] + arr[i];
+				max = Math.max(max, dp[i]);
+			}
+		}
+
+		// 두 번째 방법: arr배열 index0, index1 ... 값을 제외하여 합을 구하는 방식
+		for (int j = 1; j < arr.length; j++) {
+
+			// 이거는 잘라진 배열의 합을 계속 구해야 하는 방법이라 효율적으로 떨어질듯..
+		}
+
+		System.out.println("maxSum :: " + Arrays.toString(dp) + " maxValue :: " + max);
+
+		return max;
+	}
+
 	public static boolean wordDict(String s, String[] wordDict) {
 
 		String[] memo = {};
@@ -192,6 +217,7 @@ public class Solution {
 
 		int[] robArr = { 1, 2, 3, 1 };
 		int[] gridArr = { 1, 3, 1, 2, 2, 4, 5, 2, 2, 4, 5, 6, 1, 5, 6, 2 };
+		int[] intArr = { -2, 1, -3, 4, -1, 2 };
 
 		s.fib(1000);
 		s.fillRectangle(5);
@@ -201,6 +227,7 @@ public class Solution {
 		s.robEdit(robArr);
 		s.stairs(5);
 		s.gridSum(gridArr);
+		s.maxSubArr(intArr);
 
 	}
 
