@@ -205,20 +205,155 @@ public class Solution {
 		return max;
 	}
 
-	public static int banana(String[] words, String banana) {
-		int[] dp = new int[words.length - 1];
-		String[] subArr = new String[words.length - 1];
-		StringBuffer bananaSb = new StringBuffer(banana);
-		dp[0] = -1;
+	public static int banana(String[] strs, String t) {
 
-		System.out.println(bananaSb);
+		// 아진짜짜증난다....
+		int[] answer = new int[t.length() + 1];
+		Arrays.fill(answer, -1);
+		answer[0] = 0;
 
-		for (int i = 0; i < words.length - 1; i++) {
-			subArr[i] = words[i];
-			System.out.println(Arrays.toString(subArr));
+		for (int i = 1; i < t.length(); i++) {
+			for (String word : strs) {
+				int len = word.length();
+				if (i - len >= 0 && t.substring(i - len, i).equals(word)) {
+					if (answer[i - len] != -1) {
+						if (answer[i] == -1 || answer[i] > answer[i - len] + 1) {
+							answer[i] = answer[i - len];
+						}
+					}
+				}
+			}
 		}
 
-		return 0;
+		int n = t.length();
+		int[] dp = new int[n + 1]; // 각 위치마다의 최소 단어 조각 수를 저장할 배열
+		Arrays.fill(dp, -1); // 초기값을 -1로 설정
+
+		dp[0] = 0; // 시작 지점의 최소 단어 조각 수는 0
+
+		for (int i = 1; i <= n; i++) {
+			for (String str : strs) {
+				int len = str.length();
+				// 현재 위치부터 이전 위치까지의 부분 문자열이 str과 같은지 확인
+				if (i - len >= 0 && t.substring(i - len, i).equals(str)) {
+					if (dp[i - len] != -1) {
+						// 이전 위치까지의 최소 단어 조각 수에 1을 더한 값 중 최소값을 업데이트
+						if (dp[i] == -1 || dp[i] > dp[i - len] + 1) {
+							dp[i] = dp[i - len] + 1;
+						}
+					}
+				}
+			}
+		}
+
+		return dp[n]; // 마지막 위치의 최소 단어 조각 수 반환
+//		int[] dp = new int[banana.length() + 1]; // dp 배열 초기화
+//		Arrays.fill(dp, -1); // 모든 요소를 -1로 초기화
+//		dp[0] = 0; // 시작 지점
+//
+//		for (int i = 1; i <= banana.length(); i++) {
+//			for (String str : words) {
+//				if (i >= str.length() && banana.substring(i - str.length(), i).equals(str)) {
+//					// 현재 위치에서 str의 길이만큼을 뺀 인덱스부터 i까지의 문자열이 str과 같은 경우
+//					if (dp[i - str.length()] != -1) {
+//						// 이전 위치에서 단어를 만들 수 있었다면
+//						if (dp[i] == -1 || dp[i] > dp[i - str.length()] + 1) {
+//							// 이전에 구한 단어 수보다 적은 경우 또는 아직 단어 수가 초기화되지 않은 경우
+//							dp[i] = dp[i - str.length()] + 1; // 최소 단어 수 업데이트
+//						}
+//					}
+//				}
+//			}
+//		}
+//
+//		return dp[banana.length()]; // 최종 결과 반환
+
+//		int[] dp = new int[words.length + 1]; // 해당 인덱스까지 몇개의 단어조각을 이용해 단어를 만들 수 있는지 저장할 배열
+//		String[] tmpArr = new String[words.length]; // 해당 회차에 사용할 단어조각을 담을 배열
+//		dp[0] = -1; // 첫 번째는 -1로 두어 무조건 검사하게 한다.
+//
+//		for (int i = 1; i < words.length; i++) { // words배열의 요소수만큼 순회할 때
+//			String copiedString = new String(banana); // 완성해야 할 String을 복사해둔다.
+//			int cpLen = copiedString.length(); // 해당 String의 길이도 저장해둔다.
+//			String usedWord = ""; // 사용된 단어조각을 담을 String
+//			tmpArr[i - 1] = words[i - 1]; // 해당 회차에 사용할 단어조각을 추가해준다. index1부터 시작했으므로 i-1인덱스에 넣어줌
+//			
+//			int startIdx = i - 1; 
+//			System.out.println("tmpArr when we start : " + Arrays.toString(tmpArr));
+//			System.out.println("when we start, startIdx is :: " + startIdx);
+//
+//			if (dp[startIdx] == -1) { // 전 회차의 tmpArr요소로 단어를 만들 수 없었다면
+//				while (startIdx >= 1) {
+//					startIdx--; // start지점을 앞으로 당긴다.
+//				}
+//
+////				System.out.println("startIdx ::: " + startIdx);
+////				System.out.println("tmpArr[startIdx] :: " + tmpArr[startIdx]);
+////				System.out.println("tmpArr when we start : " + Arrays.toString(tmpArr));
+//
+//				for (int j = startIdx; tmpArr[j] != null;) {
+////					System.out.println("startIdx :: " + startIdx);
+////					System.out.println(copiedString.substring(j, j + tmpArr[j].length()));
+//					if ((copiedString.substring(j, j + tmpArr[j].length()).equals(tmpArr[j]))) {
+////						System.out.println("tmpArr[j].length() :: " + tmpArr[j].length());
+//						System.out.println("tmpArr[j] :: " + tmpArr[j]);
+//						usedWord += tmpArr[j] + " ";
+//						cpLen -= tmpArr[j].length();
+//						j += tmpArr[j].length();
+//						System.out.println("j:: " + j + ", dp[i - 1] :: " + dp[j]);
+//
+//						System.out.println("usedWord :: " + usedWord);
+//
+////						dp[j]++;
+//					}
+//				}
+//
+//				System.out.println("cpLen ::: " + cpLen);
+//
+//				if (cpLen != 0) {
+//					System.out.println("invalid");
+//
+//					dp[i] = -1;
+//				} else {
+//					String[] valid = usedWord.trim().split("\\s+");
+//
+//					System.out.println("가넝한? " + usedWord + " " + Arrays.toString(valid));
+//					dp[i] = valid.length;
+////					int notNull = 0;
+////					for (String tmp : tmpArr) {
+////						if (tmp != null) {
+////							notNull++;
+////						}
+////					}
+////
+////					dp[i] = notNull;
+//					System.out.println("dpArr? " + Arrays.toString(dp));
+//				}
+//
+//			} else {
+//				System.out.println("이전에 가능했음!");
+//				System.out.println("tmpArr now? " + tmpArr[startIdx]);
+//				System.out.println("startIndex now ? " + startIdx);
+//				System.out.println("copiedStr now? " + copiedString);
+//				if (!copiedString.equals(tmpArr[startIdx])) {
+//					
+//				}
+//			}
+//			System.out.println("\n\n\n");
+//
+//		}
+//
+//		return 0;
+	}
+
+//주어진 문자열이 strs 배열에 포함되는지 확인하는 메서드
+	public static boolean contains(String[] strs, String s) {
+		for (String str : strs) {
+			if (str.equals(s)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public static void main(String[] args) {
@@ -230,16 +365,17 @@ public class Solution {
 		String[] bananaArr = { "app", "ap", "p", "l", "e", "ple", "pp" };
 		String banana = "apple";
 
-		s.fib(1000);
-		s.fillRectangle(5);
-		s.rob(robArr);
-		s.robMemo(robArr);
-		s.robBU(robArr);
-		s.robEdit(robArr);
-		s.stairs(5);
-		s.gridSum(gridArr);
-		s.maxSubArr(intArr);
+//		s.fib(1000);
+//		s.fillRectangle(5);
+//		s.rob(robArr);
+//		s.robMemo(robArr);
+//		s.robBU(robArr);
+//		s.robEdit(robArr);
+//		s.stairs(5);
+//		s.gridSum(gridArr);
+//		s.maxSubArr(intArr);
 		s.banana(bananaArr, banana);
+		System.out.println(s.banana(bananaArr, banana));
 
 	}
 
