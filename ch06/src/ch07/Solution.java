@@ -205,11 +205,20 @@ public class Solution {
 		return max;
 	}
 
-	public static boolean wordDict(String s, String[] wordDict) {
+	public static int banana(String[] words, String banana) {
+		int[] dp = new int[words.length - 1];
+		String[] subArr = new String[words.length - 1];
+		StringBuffer bananaSb = new StringBuffer(banana);
+		dp[0] = -1;
 
-		String[] memo = {};
+		System.out.println(bananaSb);
 
-		return true;
+		for (int i = 0; i < words.length - 1; i++) {
+			subArr[i] = words[i];
+			System.out.println(Arrays.toString(subArr));
+		}
+
+		return 0;
 	}
 
 	public static void main(String[] args) {
@@ -218,6 +227,8 @@ public class Solution {
 		int[] robArr = { 1, 2, 3, 1 };
 		int[] gridArr = { 1, 3, 1, 2, 2, 4, 5, 2, 2, 4, 5, 6, 1, 5, 6, 2 };
 		int[] intArr = { -2, 1, -3, 4, -1, 2 };
+		String[] bananaArr = { "app", "ap", "p", "l", "e", "ple", "pp" };
+		String banana = "apple";
 
 		s.fib(1000);
 		s.fillRectangle(5);
@@ -228,6 +239,7 @@ public class Solution {
 		s.stairs(5);
 		s.gridSum(gridArr);
 		s.maxSubArr(intArr);
+		s.banana(bananaArr, banana);
 
 	}
 
