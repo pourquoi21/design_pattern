@@ -213,40 +213,44 @@ public class Solution {
 		answer[0] = 0;
 
 		for (int i = 1; i < t.length(); i++) {
-			for (String word : strs) {
-				int len = word.length();
-				if (i - len >= 0 && t.substring(i - len, i).equals(word)) {
-					if (answer[i - len] != -1) {
-						if (answer[i] == -1 || answer[i] > answer[i - len] + 1) {
-							answer[i] = answer[i - len];
-						}
-					}
-				}
-			}
-		}
-
-		int n = t.length();
-		int[] dp = new int[n + 1]; // 각 위치마다의 최소 단어 조각 수를 저장할 배열
-		Arrays.fill(dp, -1); // 초기값을 -1로 설정
-
-		dp[0] = 0; // 시작 지점의 최소 단어 조각 수는 0
-
-		for (int i = 1; i <= n; i++) {
 			for (String str : strs) {
 				int len = str.length();
-				// 현재 위치부터 이전 위치까지의 부분 문자열이 str과 같은지 확인
+
 				if (i - len >= 0 && t.substring(i - len, i).equals(str)) {
-					if (dp[i - len] != -1) {
-						// 이전 위치까지의 최소 단어 조각 수에 1을 더한 값 중 최소값을 업데이트
-						if (dp[i] == -1 || dp[i] > dp[i - len] + 1) {
-							dp[i] = dp[i - len] + 1;
+					if (answer[i - len] != -1) {
+						if (answer[i] == -1 || answer[i] > answer[i - len] + 1) {
+							answer[i] = answer[i - len] + 1;
 						}
 					}
 				}
 			}
 		}
 
-		return dp[n]; // 마지막 위치의 최소 단어 조각 수 반환
+		return answer[t.length()];
+
+//		int n = t.length();
+//		int[] dp = new int[n + 1]; // 각 위치마다의 최소 단어 조각 수를 저장할 배열
+//		Arrays.fill(dp, -1); // 초기값을 -1로 설정
+//
+//		dp[0] = 0; // 시작 지점의 최소 단어 조각 수는 0
+//
+//		for (int i = 1; i <= n; i++) {
+//			for (String str : strs) {
+//				int len = str.length();
+//				// 현재 위치부터 이전 위치까지의 부분 문자열이 str과 같은지 확인
+//				if (i - len >= 0 && t.substring(i - len, i).equals(str)) {
+//					if (dp[i - len] != -1) {
+//						// 이전 위치까지의 최소 단어 조각 수에 1을 더한 값 중 최소값을 업데이트
+//						if (dp[i] == -1 || dp[i] > dp[i - len] + 1) {
+//							dp[i] = dp[i - len] + 1;
+//						}
+//					}
+//				}
+//			}
+//		}
+//
+
+//		return dp[n]; // 마지막 위치의 최소 단어 조각 수 반환
 //		int[] dp = new int[banana.length() + 1]; // dp 배열 초기화
 //		Arrays.fill(dp, -1); // 모든 요소를 -1로 초기화
 //		dp[0] = 0; // 시작 지점
