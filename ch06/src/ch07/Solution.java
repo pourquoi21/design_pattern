@@ -219,7 +219,7 @@ public class Solution {
 				if (i - len >= 0 && t.substring(i - len, i).equals(str)) {
 					if (answer[i - len] != -1) {
 						if (answer[i] == -1 || answer[i] > answer[i - len] + 1) {
-							answer[i] = answer[i - len] + 1;
+							answer[i] = answer[i - len] + 1; // 왜 1을 더해주는지 이해필요..
 						}
 					}
 				}
