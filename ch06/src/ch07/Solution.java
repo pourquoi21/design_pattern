@@ -216,6 +216,10 @@ public class Solution {
 			for (String str : strs) {
 				int len = str.length();
 
+				System.out.println("i   :: " + i);
+				System.out.println("str :: " + str);
+				System.out.println("len :: " + len);
+
 				if (i - len >= 0 && t.substring(i - len, i).equals(str)) {
 					if (answer[i - len] != -1) {
 						if (answer[i] == -1 || answer[i] > answer[i - len] + 1) {
@@ -223,6 +227,8 @@ public class Solution {
 						}
 					}
 				}
+
+				System.out.println("\n\n\n");
 			}
 		}
 
