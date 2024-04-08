@@ -216,11 +216,13 @@ public class Solution {
 			for (String str : strs) {
 				int len = str.length();
 
-				System.out.println("i   :: " + i);
-				System.out.println("str :: " + str);
-				System.out.println("len :: " + len);
+				System.out.println("i          :: " + i);
 
 				if (i - len >= 0 && t.substring(i - len, i).equals(str)) {
+					System.out.println("str        :: " + str);
+					System.out.println("len        :: " + len);
+					System.out.println("answer[" + i + "]  :: " + answer[i]);
+					System.out.println("answer     :: " + Arrays.toString(answer));
 					if (answer[i - len] != -1) {
 						if (answer[i] == -1 || answer[i] > answer[i - len] + 1) {
 							answer[i] = answer[i - len] + 1; // 왜 1을 더해주는지 이해필요..
@@ -232,7 +234,7 @@ public class Solution {
 			}
 		}
 
-		return answer[t.length()];
+		return answer[t.length() - 1];
 
 //		int n = t.length();
 //		int[] dp = new int[n + 1]; // 각 위치마다의 최소 단어 조각 수를 저장할 배열
