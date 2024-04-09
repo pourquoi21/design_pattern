@@ -387,7 +387,7 @@ public class Solution {
 //		s.gridSum(gridArr);
 //		s.maxSubArr(intArr);
 		s.banana(bananaArr, banana);
-		System.out.println(s.banana(bananaArr, banana));
+//		System.out.println(s.banana(bananaArr, banana));
 
 	}
 
