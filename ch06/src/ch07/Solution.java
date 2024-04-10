@@ -368,26 +368,49 @@ public class Solution {
 		return false;
 	}
 
+	public long move(int a, int b, int[] g, int[] s, int[] w, int[] t) {
+		long answer = -1;
+
+		double town = g.length;
+
+		double left = 1;
+		double right = 4 * Math.pow(10, 14);
+		double mid = (left + right) / 2;
+
+		for (double i = 0; i < town; i++) {
+
+		}
+
+		return answer;
+
+	}
+
 	public static void main(String[] args) {
-		Solution s = new Solution();
+		Solution sol = new Solution();
 
 		int[] robArr = { 1, 2, 3, 1 };
 		int[] gridArr = { 1, 3, 1, 2, 2, 4, 5, 2, 2, 4, 5, 6, 1, 5, 6, 2 };
 		int[] intArr = { -2, 1, -3, 4, -1, 2 };
 		String[] bananaArr = { "app", "ap", "p", "l", "e", "ple", "pp" };
 		String banana = "apple";
+		int a = 90;
+		int b = 500;
+		int[] g = { 70, 70, 0 };
+		int[] s = { 0, 0, 500 };
+		int[] w = { 100, 100, 2 };
+		int[] t = { 4, 8, 1 };
 
-//		s.fib(1000);
-//		s.fillRectangle(5);
-//		s.rob(robArr);
-//		s.robMemo(robArr);
-//		s.robBU(robArr);
-//		s.robEdit(robArr);
-//		s.stairs(5);
-//		s.gridSum(gridArr);
-//		s.maxSubArr(intArr);
-		s.banana(bananaArr, banana);
-//		System.out.println(s.banana(bananaArr, banana));
+//		sol.fib(1000);
+//		sol.fillRectangle(5);
+//		sol.rob(robArr);
+//		sol.robMemo(robArr);
+//		sol.robBU(robArr);
+//		sol.robEdit(robArr);
+//		sol.stairs(5);
+//		sol.gridSum(gridArr);
+//		sol.maxSubArr(intArr);
+//		sol.banana(bananaArr, banana);
+//		System.out.println(sol.banana(bananaArr, banana));
 
 	}
 
