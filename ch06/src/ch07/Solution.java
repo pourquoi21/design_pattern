@@ -381,6 +381,8 @@ public class Solution {
 
 		}
 
+		long max = (long) (4 * Math.pow(10, 14));
+
 		return answer;
 
 	}
