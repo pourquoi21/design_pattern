@@ -376,12 +376,16 @@ public class Solution {
 		double left = 1;
 		double right = 4 * Math.pow(10, 14);
 		double mid = (left + right) / 2;
-
+		
+		long max = (long) (4 * Math.pow(10, 14));
+		long min = 1;
+		long count = 0;
+		long time = 0;
 		for (double i = 0; i < town; i++) {
-
+			count = 
 		}
 
-		long max = (long) (4 * Math.pow(10, 14));
+		
 //hmm
 		return answer;
 
