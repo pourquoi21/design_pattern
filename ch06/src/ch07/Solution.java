@@ -368,8 +368,11 @@ public class Solution {
 		return false;
 	}
 
-	public long move(int a, int b, int[] g, int[] s, int[] w, int[] t) {
+	public long move(long time, int a, int b, int[] g, int[] s, int[] w, int[] t) {
 		long answer = -1;
+		long total = 0;
+		long totalG = 0;
+		long totalS = 0;
 
 		double town = g.length;
 
@@ -380,9 +383,13 @@ public class Solution {
 		long max = (long) (4 * Math.pow(10, 14));
 		long min = 1;
 		long count = 0;
-		long time = 0;
-		for (double i = 0; i < town; i++) {
-			count = 
+		
+		
+		for (int i = 0; i < town; i++) {
+			count = time / (t[i] * 2) + 1/2;
+			long tmp = Math.min(count * w[i], g[i] + s[i]);
+			total += tmp;
+			totalG +=)
 		}
 
 		
