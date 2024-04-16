@@ -368,35 +368,93 @@ public class Solution {
 		return false;
 	}
 
-	public long move(long time, int a, int b, int[] g, int[] s, int[] w, int[] t) {
-		long answer = -1;
+	public boolean isPossible(long time, int a, int b, int[] g, int[] s, int[] w, int[] t) {
 		long total = 0;
 		long totalG = 0;
 		long totalS = 0;
 
-		double town = g.length;
+		int town = g.length;
 
-		double left = 1;
-		double right = 4 * Math.pow(10, 14);
-		double mid = (left + right) / 2;
-		
-		long max = (long) (4 * Math.pow(10, 14));
-		long min = 1;
-		long count = 0;
-		
-		
 		for (int i = 0; i < town; i++) {
-			count = time / (t[i] * 2) + 1/2;
+			long count = time / (t[i] * 2L) + (1 / 2);
+
 			long tmp = Math.min(count * w[i], g[i] + s[i]);
 			total += tmp;
-			totalG +=)
+			totalG += Math.min(tmp, g[i]);
+			totalS += Math.min(tmp, s[i]);
 		}
 
-		
-//hmm
-		return answer;
-
+		if (total >= a + b && totalG >= a && totalS >= b) {
+			return true;
+		}
+		return false;
 	}
+
+	public long move(int a, int b, int[] g, int[] s, int[] w, int[] t) {
+		long left = 0;
+		long right = (long) (4 * Math.pow(10, 14));
+		System.out.println(right);
+
+		while (left + 1 < right) {
+			long mid = (left + right) / 2;
+
+			if (isPossible(mid, a, b, g, s, w, t)) {
+				right = mid;
+			} else {
+				left = mid;
+			}
+		}
+		System.out.println(left);
+		return left;
+	}
+
+	// 특정 시간이 주어졌을 떄, (a, b)만큼 조달이 가능한지 리턴
+	// 가능하면 ture
+	// 불가능하면 false
+//	public boolean isPossible(long time, int a, int b, int[] g, int[] s, int[] w, int[] t) {
+//		int n = g.length;
+//		long total = 0L;
+//		long totalG = 0L;
+//		long totalS = 0L;
+//
+//		for (int i = 0; i < n; i++) {
+//			// 해당 시간에 옮길 수 있는 횟수
+//			long cnt = time / (2L * t[i]);
+//			if (time % (2L * t[i]) >= t[i])
+//				cnt++;
+//
+//			// 해당 시간에 옮길 수 있는 무게
+//			long tmp = Math.min(cnt * w[i], g[i] + s[i]);
+//			// 각 도시의 총합 최대 무게 누적
+//			total += tmp;
+//			// 각 도시의 금 최대 무게 누적
+//			totalG += Math.min(tmp, g[i]);
+//			// 각 도시의 은 최대 무게 누적
+//			totalS += Math.min(tmp, s[i]);
+//		}
+//
+//		if (total >= a + b && totalG >= a && totalS >= b)
+//			return true;
+//		return false;
+//	}
+//
+//	public long solution(int a, int b, int[] g, int[] s, int[] w, int[] t) {
+//		long hi = 400000000000000L;
+//		long lo = 0;
+//
+//		// 이분 탐색
+//		while (lo + 1 < hi) {
+//			long mid = (lo + hi) / (long) 2;
+//
+//			if (isPossible(mid, a, b, g, s, w, t))
+//				hi = mid;
+//			else
+//				lo = mid;
+//		}
+//
+//		System.out.println("lo :: " + lo + " hi:: " + hi);
+//		return hi;
+//	}
 
 	public static void main(String[] args) {
 		Solution sol = new Solution();
@@ -412,6 +470,8 @@ public class Solution {
 		int[] s = { 0, 0, 500 };
 		int[] w = { 100, 100, 2 };
 		int[] t = { 4, 8, 1 };
+
+		sol.move(a, b, g, s, w, t);
 
 //		sol.fib(1000);
 //		sol.fillRectangle(5);
