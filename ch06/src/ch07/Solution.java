@@ -391,7 +391,7 @@ public class Solution {
 	}
 
 	public long move(int a, int b, int[] g, int[] s, int[] w, int[] t) {
-		long left = 0;
+		long left = 1;
 		long right = (long) (4 * Math.pow(10, 14));
 
 		while (left + 1 < right) {
