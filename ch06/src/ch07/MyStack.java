@@ -15,4 +15,8 @@ public class MyStack<E> {
 		// 마지막 요소 위치인 top이 배열 길이 - 1 과 같은 경우 끝까지 차있는 것과 같음.
 		return top == arr.length - 1;
 	}
+
+	public boolean isEmpty() {
+		return top == -1;
+	}
 }
