@@ -1,5 +1,7 @@
 package ch07;
 
+import java.util.Arrays;
+
 public class MyStack<E> {
 	private static final int DEFAULT_CAPACITY = 6; // 최소 용량 크기
 	private Object[] arr; // 요소를 담을 내부 배열
@@ -18,5 +20,35 @@ public class MyStack<E> {
 
 	public boolean isEmpty() {
 		return top == -1;
+	}
+
+	private void resize() {
+		int arr_capacity = arr.length - 1;
+
+		if (top == arr_capacity) {
+			int new_capacity = arr.length * 2;
+
+			arr = Arrays.copyOf(arr, new_capacity);
+			return;
+		}
+
+		if (top < (arr_capacity / 2)) {
+			int half_capacity = arr.length / 2;
+
+			arr = Arrays.copyOf(arr, Math.max(half_capacity, DEFAULT_CAPACITY));
+			return;
+		}
+	}
+
+	public E push(E value) {
+		if (isFull()) {
+			resize();
+		}
+
+		top++;
+
+		arr[top] = value;
+
+		return value;
 	}
 }
