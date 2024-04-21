@@ -1,6 +1,7 @@
 package ch07;
 
 import java.util.Arrays;
+import java.util.EmptyStackException;
 
 public class MyStack<E> {
 	private static final int DEFAULT_CAPACITY = 6; // 최소 용량 크기
@@ -50,5 +51,23 @@ public class MyStack<E> {
 		arr[top] = value;
 
 		return value;
+	}
+
+	@SuppressWarnings("unchecked")
+	public E pop() {
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+
+		E value = (E) arr[top];
+
+		arr[top] = null;
+
+		top--;
+
+		resize();
+
+		return value;
+
 	}
 }
