@@ -70,4 +70,13 @@ public class MyStack<E> {
 		return value;
 
 	}
+
+	@SuppressWarnings("unchecked")
+	public E peek() {
+		if (isEmpty()) {
+			throw new EmptyStackException();
+		}
+
+		return (E) arr[top];
+	}
 }
