@@ -79,4 +79,14 @@ public class MyStack<E> {
 
 		return (E) arr[top];
 	}
+
+	public int search(E value) {
+		for (int i = top; i >= 0; i--) {
+			if (arr[i].equals(value)) {
+				return top - i + 1; // top에서부터 얼마나 떨어져 있는지를 구함, 곧 몇 번째로 꺼내질 요소인지를 말한다.
+			}
+		}
+
+		return -1; // 찾고자 하는 값이 없으면 -1을 반환
+	}
 }
