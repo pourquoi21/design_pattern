@@ -16,5 +16,10 @@ public class LinkedList {
 			this.data = input;
 			this.next = null;
 		}
+
+		// 노드의 내용을 쉽게 출력해 확인해볼 수 있는 기능
+		public String toString() {
+			return String.valueOf(this.data);
+		}
 	}
 }
