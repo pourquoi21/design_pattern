@@ -89,4 +89,9 @@ public class MyStack<E> {
 
 		return -1; // 찾고자 하는 값이 없으면 -1을 반환
 	}
+
+	@Override
+	public String toString() {
+		return Arrays.toString(arr);
+	}
 }
