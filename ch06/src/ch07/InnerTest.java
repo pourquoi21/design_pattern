@@ -9,6 +9,19 @@ class AAA {
 			System.out.println(i); // 객체생성없이 외부클래스의 멤버에 접근가능
 		}
 	}
+
+	static class StaticBBB {
+		// 외부클래스의 static멤버처럼 다루어짐.
+		// static메서드에 사용될 목적으로 선언된다.
+	}
+
+	void AAAMethod() {
+		class LocalInner {
+			// 이렇게 메서드내에서만 쓰는 내부클래스도 있을 수 있다.
+			// local variable처럼 변수선언하듯 내부클래스도 선언이 가능한 것임
+			// 이는 선언된 영역 내부에서만 사용가능.
+		}
+	}
 }
 
 // BBB 클래스가 AAA의 외부에 있으면 AAA의 멤버를 사용하기 위해
