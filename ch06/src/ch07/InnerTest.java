@@ -8,6 +8,8 @@ class AAA {
 		void method() {
 			System.out.println(i); // 객체생성없이 외부클래스의 멤버에 접근가능
 		}
+
+		static int cv = 100;
 	}
 
 	static class StaticBBB {
