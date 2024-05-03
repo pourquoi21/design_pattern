@@ -4,7 +4,9 @@ class Ex7_12 {
 	class InstanceInner {
 		int iv = 100;
 		static int cv = 100; // static class가 아닌데 왜 static 변수 쓰는게 가능하지?
-		final static int CONST = 100;
+		// 자바 버전이 업그레이드되면서 바뀌었다고 함.
+		final static int CONST = 100; // final static은 상수이기에 허용
+
 	}
 
 	static class StaticInner {
@@ -16,7 +18,11 @@ class Ex7_12 {
 		class LocalInner {
 			int iv = 300;
 			static int cv = 300;
-			final static int CONST = 300;
+			final static int CONST = 300; // 상수는 허용
 		}
+	}
+
+	public static void main(String[] args) {
+		System.out.println(InstanceInner.cv);
 	}
 }
