@@ -18,21 +18,24 @@ class Ex7_12 {
 	void myMethod() {
 		class LocalInner {
 			int iv = 300;
-			static int cv = 300;
+//			static int cv = 300; // 원래 이것도 안됐었음
 			final static int CONST = 300; // 상수는 허용
 		}
 
 		int i = LocalInner.CONST; // 이건 되지만
+
 	}
 
 	public static void main(String[] args) {
 		System.out.println(InstanceInner.cv);
 		System.out.println(StaticInner.cv);
+
 		// localInner의 변수를 이렇게 외부에서 쓸 수는 없다.
 		// 왜냐하면 localInner는 method안에서만 사용되고 사라지기 때문
 		// CONST가 static 상수이지만 localInner가 지역 내부클래스이므로
 		// 메서드 내에서만 사용 가능
 		System.out.println(LocalInner.CONST);
+		System.out.println(InstanceInner.class);
 
 	}
 }
