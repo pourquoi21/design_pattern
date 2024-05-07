@@ -34,8 +34,8 @@ class Ex7_12 {
 		// 왜냐하면 localInner는 method안에서만 사용되고 사라지기 때문
 		// CONST가 static 상수이지만 localInner가 지역 내부클래스이므로
 		// 메서드 내에서만 사용 가능
-		System.out.println(LocalInner.CONST);
-		System.out.println(InstanceInner.class);
+//		System.out.println(LocalInner.CONST); // 지역 내부 클래스는 메서드 내에서만
+//		System.out.println(InstanceInner.class);
 
 	}
 }
