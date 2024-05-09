@@ -17,6 +17,7 @@ public class Ex7_13 {
 //		InstanceInner obj1 = new InstanceInner(); // 안됨
 		StaticInner obj2 = new StaticInner();
 
+		// 이렇게 써도 되지만 굳이 쓸 일은 없다..
 		Ex7_13 outer = new Ex7_13(); // 인스턴스 클래스는 외부 클래스를 먼저 생성해야만 생성 가능
 		InstanceInner obj1 = outer.new InstanceInner();
 	}
