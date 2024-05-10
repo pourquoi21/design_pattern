@@ -1,7 +1,7 @@
 package ch07;
 
 public class Ex7_13 {
-	class InstanceInner {
+	class InstanceInner { // iv와 같음
 	}
 
 	static class StaticInner {
