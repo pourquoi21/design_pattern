@@ -19,7 +19,7 @@ public class MyStack<E> {
 		return top == arr.length - 1;
 	}
 
-	public boolean isEmpty() {
+	public boolean isEmpty() { // 혹은 empty?
 		return top == -1;
 	}
 
