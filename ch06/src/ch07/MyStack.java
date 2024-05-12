@@ -8,6 +8,8 @@ public class MyStack<E> {
 	private Object[] arr; // 요소를 담을 내부 배열
 	private int top; // 스택의 가장 마지막 요소를 가리키는 포인터
 
+	// cf. queue는 LinkedList로 구현한다.
+
 	// 생성자
 	public MyStack() {
 		this.arr = new Object[DEFAULT_CAPACITY]; // 6 용량으로 내부 배열 생성
