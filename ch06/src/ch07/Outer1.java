@@ -5,7 +5,7 @@ public class Outer1 {
 	static int outerCv = 0;
 
 	class InstanceInner1 {
-		int iiv = outerIv; // 외부 클래스의 private멤버에도 접근 가능
+		int iiv = outerIv; // 1. 외부 클래스의 private멤버에도 접근 가능
 		int iiv2 = outerCv;
 	}
 
@@ -24,7 +24,7 @@ public class Outer1 {
 
 		lv = 3; // 이렇게 값을 바꾸면 상수가 아니므로 에러남
 
-		class LocalInner1 {
+		class LocalInner1 { // 2. 지역 내부클래스를 감싸고 있는 메서드의 상수만 사용 가능.
 			int liv = outerIv;
 			int liv2 = outerCv;
 
