@@ -11,5 +11,7 @@ public class Ex7_15 {
 class Outer2 {
 	class InstanceInner {
 		int iv = 100;
+
+		// static은 바로 쓸 수 있음
 	}
 }
