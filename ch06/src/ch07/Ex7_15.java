@@ -9,6 +9,7 @@ public class Ex7_15 {
 }
 
 class Outer2 {
+	// 이것도 인스턴스멤버이므로 객체를 만들어 쓴다고 이해하면 된다.
 	class InstanceInner {
 		int iv = 100;
 
