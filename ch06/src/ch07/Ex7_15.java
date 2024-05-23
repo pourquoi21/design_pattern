@@ -9,6 +9,9 @@ public class Ex7_15 {
 		System.out.println("ii.iv : " + ii.iv);
 		// static은 바로 쓸 수 있음
 		System.out.println("Outer2.StaticInner.cv : " + Outer2.StaticInner.cv);
+
+		// 스태틱 내부클래스의 인스턴스는 외부클래스 생성하지 않아도 사용가능
+		Outer2.StaticInner si = new Outer2.StaticInner();
 	}
 }
 
