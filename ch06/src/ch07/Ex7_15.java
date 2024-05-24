@@ -11,6 +11,7 @@ public class Ex7_15 {
 		System.out.println("Outer2.StaticInner.cv : " + Outer2.StaticInner.cv);
 
 		// 스태틱 내부클래스의 인스턴스는 외부클래스 생성하지 않아도 사용가능
+		// 스태틱이기때문
 		Outer2.StaticInner si = new Outer2.StaticInner();
 	}
 }
