@@ -647,5 +647,8 @@ players.forEach((player, index) => {
     } // 왜안되는건지 이해가안감...
     
     Map.entry<> map : mapName.entires
+    
+     // 소요시간이 짧은 것이 먼저오는 큐
+        PriorityQueue<int[]> workQ = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
 
 }
