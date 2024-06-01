@@ -6,4 +6,5 @@
  *
  */
 module ch06 {
+	requires java.desktop;
 }
