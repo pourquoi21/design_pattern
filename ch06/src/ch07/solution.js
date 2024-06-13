@@ -652,3 +652,16 @@ players.forEach((player, index) => {
         PriorityQueue<int[]> workQ = new PriorityQueue<>((o1, o2) -> o1[1] - o2[1]);
 
 }
+
+public void dfs(int nodeIndex, boolean[] visited, int[][] dungeons, int k) {
+        visited[nodeIndex] = true;
+        
+        System.out.print(nodeIndex + " -> ");
+        
+        for (int node : dungeons[nodeIndex]) {
+            if(!visited[node]) {
+                dfs(node, visited, dungeons, k);
+            }
+        }
+        
+    }
