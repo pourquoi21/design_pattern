@@ -665,3 +665,6 @@ public void dfs(int nodeIndex, boolean[] visited, int[][] dungeons, int k) {
         }
         
     }
+    
+    
+ Integer[] integerArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
