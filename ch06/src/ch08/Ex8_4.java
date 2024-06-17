@@ -19,7 +19,7 @@ public class Ex8_4 {
 			System.out.println(e.getMessage());
 			// 멀티캐치블록 안에는 묶어 둔 예외 중 하나에만 해당되는 메서드를 사용해서는 안됨.
 		} catch (Exception e) { // arithmetic외에 다른 에러가 발생했는데 이 부분을 주석처리하면 예외처리가 안되고 프로그램이 비정상 종료된다.
-			System.out.println("Exception");
+			System.out.println("Exception"); // checked 예외
 			// try-catch의 끝
 		}
 		System.out.println(6);
