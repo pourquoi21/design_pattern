@@ -7,6 +7,7 @@ public class Ex8_7 {
 			throw new Exception();
 		} catch (Exception e) {
 			throw new RuntimeException();
+		} finally {
 		}
 	}
 
