@@ -1,12 +1,15 @@
 package ch08;
 
-import java.io.*;
+import java.io.File;
 
 public class Ex8_10 {
 
 	public static void main(String[] args) {
 		try {
 			File f = createFile(args[0]);
+			System.out.println(f.getName() + "파일 성공적으로 생성됨");
+		} catch (Exception e) {
+			System.out.println(e.getMessage() + " 다시 입력해 주시기 바랍니다.");
 		}
 	}
 
