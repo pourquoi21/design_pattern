@@ -12,6 +12,7 @@ public class Ex8_10 {
 			System.out.println(e.getMessage() + " 다시 입력해 주시기 바랍니다.");
 		}
 	}
+	// args를 설정해주려면 run configuration에서 argument 적어준다.
 
 	static File createFile(String fileName) throws Exception {
 		if (fileName == null || fileName.equals("")) {
