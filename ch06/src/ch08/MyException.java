@@ -9,4 +9,5 @@ public class MyException extends Exception {
 
 	// 예외 되던지기라는 개념도 있다.
 	// 메서드 내에서 약간 처리한 다음 main에서 나머지를 처리한다든지..
+	// 이 경우에는 메서드 내에서 다시 throw e 와 같이 예외를 발생시킨다.
 }
