@@ -18,6 +18,8 @@ public class Ex8_12 {
 			System.out.println("예외를 되던집니다.");
 			throw e; // 다시 예외를 발생시킴
 		}
+
+		// chained exception
 	}
 
 }
