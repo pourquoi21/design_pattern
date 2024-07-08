@@ -20,6 +20,9 @@ public class Ex8_12 {
 		}
 
 		// chained exception
+		// throwable initcause(throwable cause) - 지정한 예외를 원인 예외로 등록
+		// throwable getCause() - 원인 예외를 반환
+		// 여기에서 throwable은 exception과 error의 조상
 	}
 
 }
