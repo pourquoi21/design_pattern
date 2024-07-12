@@ -25,7 +25,7 @@ public class Ex8_12 {
 		// 여기에서 throwable은 exception과 error의 조상
 		// catch에서 원인예외로 등록할 예외를 잡아준다음
 		// initcause에 예외를 지정해주면 됨
-		// oh
+		// runtimeException을 만들고 이 안에 필수예외를 넣으면, 해당 예외를 필수로 처리하지 않아도됨!
 	}
 
 }
