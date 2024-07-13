@@ -28,4 +28,14 @@ public class Ex8_12 {
 		// runtimeException을 만들고 이 안에 필수예외를 넣으면, 해당 예외를 필수로 처리하지 않아도됨!
 	}
 
+	static void startInstall() throws SpaceException {
+		if (!enoughSpace()) {
+			throw new SpaceException("설치할 공간이 부족합니다.");
+		}
+
+		if (!enoughMemory()) {
+			throw new RuntimeException(new MemoryException("메모리가 부족합니다."));
+		}
+	}
+
 }
