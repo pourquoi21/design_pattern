@@ -34,6 +34,8 @@ public class Ex8_12 {
 		}
 
 		if (!enoughMemory()) {
+			// memoryException을 선택처리로 바꾼거임
+			// runtimeException을 던지고 이때의 원인예외를 memoryException으로 처리한것
 			throw new RuntimeException(new MemoryException("메모리가 부족합니다."));
 		}
 	}
