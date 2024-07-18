@@ -668,6 +668,7 @@ public void dfs(int nodeIndex, boolean[] visited, int[][] dungeons, int k) {
     
     // 7.16 aujourd'hui j'ai travaille sur javascript
     // 7.17 aujourd'hui aussi, je suis fatigee parce qu'un probleme
+    // 7.18 When we use openlayers, don't forget not to use 'zoom' as element style.
     
     
  Integer[] integerArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
