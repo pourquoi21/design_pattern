@@ -22,4 +22,9 @@ class Card {
 		this.kind = kind;
 		this.number = number;
 	}
+
+	// Object클래스의 toString()을 오버라이딩
+	public String toString() {
+		return "kind: " + kind + " number: " + number;
+	}
 }
