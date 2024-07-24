@@ -5,7 +5,7 @@ public class Ex9_4 {
 		Card c1 = new Card();
 		Card c2 = new Card();
 
-		System.out.println(c1.toString()); // 이건 별로 도움이 안된다.
+		System.out.println(c1.toString()); // Object의 toString은 별로 도움이 안된다.
 		System.out.println(c2.toString());
 	}
 }
