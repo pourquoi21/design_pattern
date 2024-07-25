@@ -7,6 +7,8 @@ public class Ex9_4 {
 
 		System.out.println(c1.toString()); // Object의 toString은 별로 도움이 안된다.
 		System.out.println(c2.toString());
+
+		System.out.println(c1.equals(c2));
 	}
 }
 
