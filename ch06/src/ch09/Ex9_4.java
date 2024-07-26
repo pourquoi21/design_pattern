@@ -25,6 +25,15 @@ class Card {
 		this.number = number;
 	}
 
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Card)) {
+			return false;
+		}
+
+		Card c = (Card) obj;
+		return this.kind == c.kind && this.number == c.number;
+	}
+
 	// Object클래스의 toString()을 오버라이딩
 	public String toString() {
 		return "kind: " + kind + " number: " + number;
