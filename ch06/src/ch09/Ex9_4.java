@@ -31,7 +31,7 @@ class Card {
 		}
 
 		Card c = (Card) obj;
-		return this.kind == c.kind && this.number == c.number;
+		return this.kind.equals(c.kind) && this.number == c.number;
 	}
 
 	// Object클래스의 toString()을 오버라이딩
