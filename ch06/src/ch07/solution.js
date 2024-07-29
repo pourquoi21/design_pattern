@@ -665,6 +665,10 @@ players.forEach((player, index) => {
         answer = Math.max(answer, depth);
     }
         
+        public int solution(String word) {
+			char[] alp = {'A', 'E', 'I', 'O', 'U'};
+			int[] weights = {781, 156, 31, 6, 1};
+		}
     }
     
     // 7.16 aujourd'hui j'ai travaille sur javascript
