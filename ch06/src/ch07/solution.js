@@ -668,6 +668,9 @@ players.forEach((player, index) => {
         public int solution(String word) {
 			char[] alp = {'A', 'E', 'I', 'O', 'U'};
 			int[] weights = {781, 156, 31, 6, 1};
+			int res = 0;
+			
+		
 		}
     }
     
