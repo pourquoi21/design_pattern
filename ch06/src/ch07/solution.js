@@ -668,7 +668,7 @@ players.forEach((player, index) => {
         public int solution(String word) {
 			char[] alp = {'A', 'E', 'I', 'O', 'U'};
 			int[] weights = {781, 156, 31, 6, 1};
-			int res = 0;
+			int res = 0; // 현재 단어가 몇 번째 단어인지
 			
 		
 		}
