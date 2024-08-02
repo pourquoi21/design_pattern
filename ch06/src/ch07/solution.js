@@ -668,6 +668,10 @@ players.forEach((player, index) => {
         public int solution(String word) {
 			char[] alp = {'A', 'E', 'I', 'O', 'U'};
 			int[] weights = {781, 156, 31, 6, 1};
+			// 맨앞에 E가 온다면
+			// 이것은 alp에서 1번째 인덱스이고
+			// 전체 사전단어 중에 782번째이다
+			// 따라서 A로 시작하는 단어가 782개라는 것이다.
 			int res = 0; // 현재 단어가 몇 번째 단어인지 저장할 변수
 			
 		
