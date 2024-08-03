@@ -674,6 +674,13 @@ players.forEach((player, index) => {
 			// 따라서 A로 시작하는 단어가 782개라는 것이다.
 			int res = 0; // 현재 단어가 몇 번째 단어인지 저장할 변수
 			
+			for (int i = 0; i < word.length(); i++) { // 단어를 순회하면서
+				int n = indexOf(alp, word.charAt(i)); // 각 인덱스의 char들이 어떤 글자인지 알아봄
+				res += n * weights[i] + 1; // 어떤 글자냐에 따라서 각 자리 가중치를 더해준다.
+				// 1을 더해주는 이유는 해당 글자 개수를 더해주어야 하기 때문인거같음.
+				
+			}
+			 
 		
 		}
     }
