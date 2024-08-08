@@ -5,3 +5,6 @@
 1206 TIL:
 When you pass a 'name' of an element from javascript to xml mapper,
 the name is recommended not to be a single character of alphabet.
+
+0808 TIL:
+About getClass() of Object
